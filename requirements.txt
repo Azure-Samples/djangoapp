@@ -1,4 +1,4 @@
 Django==2.1.2
-psycopg2-binary==2.7.5
+psycopg2-binary==2.8.4
 pytz==2018.5
 whitenoise==4.1
