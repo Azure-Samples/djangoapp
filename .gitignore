@@ -112,3 +112,12 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# GitHub
+.github
+
+# Visual Studio Code
+.vscode/
+
+# Azure
+.azure/
