@@ -13,10 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v2
 
     - name: Setup Python version
-      uses: actions/setup-python@v1
+      uses: actions/setup-python@v2
       with:
         python-version: 3.x
 
@@ -30,3 +30,16 @@ jobs:
 
     - name: Run tests
       run: python manage.py test
+  
+  deploy-to-webapp:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Deploy to Azure App Service
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: '<your-python-app-name>'
+          publish-profile: ${{ secrets.<your-publish-profile-secret-name> }}
+          package: '.'
