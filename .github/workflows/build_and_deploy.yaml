@@ -40,6 +40,6 @@ jobs:
       - name: Deploy to Azure App Service
         uses: azure/webapps-deploy@v2
         with:
-          app-name: '<your-python-app-name>'
-          publish-profile: ${{ secrets.<your-publish-profile-secret-name> }}
+          app-name: 'your-python-app-name'
+          publish-profile: ${{ secrets.your-publish-profile-secret-name }}
           package: '.'
