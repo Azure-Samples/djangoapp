@@ -36,7 +36,7 @@ jobs:
   
   deploy-to-webapp:
     needs: build-and-test
-    if: RUN_DEPLOYMENT_JOB
+    if: ${{ env.RUN_DEPLOYMENT_JOB }}
     runs-on: ubuntu-latest
 
     steps:
