@@ -42,5 +42,5 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'your-python-app-name'
-          publish-profile: ${{ secrets.your-publish-profile-secret-name }}
+          publish-profile: ${{ secrets.your_publish_profile_secret_name }}
           package: '.'
