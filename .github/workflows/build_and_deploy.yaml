@@ -18,7 +18,7 @@ jobs:
     - name: Setup Python version
       uses: actions/setup-python@v2
       with:
-        python-version: 3.x
+        python-version: 3.8
 
     - name: Create and start virtual environment
       run: |
@@ -37,10 +37,15 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      
+      - name: Build for App Service
+        uses: azure/appservice-build@v2
+        with:
+          platform: python
+          platform-version: '3.8'
 
-      - name: Deploy to Azure App Service
+      - name: Deploy to App Service
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'freeberg-django'
           publish-profile: ${{ secrets.your_publish_profile_secret_name }}
-          package: '.'
