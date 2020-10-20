@@ -28,6 +28,17 @@ jobs:
     - name: Install dependencies
       run: pip install -r requirements.txt
 
+    - name: Collect static
+      run: python manage.py collectstatic
+
+    - name: Upload artifact for deployment jobs
+      uses: actions/upload-artifact@v2
+      with:
+        name: python-app
+        path: |
+          . 
+          !venv/
+
     - name: Run tests
       run: python manage.py test
   
@@ -36,13 +47,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      
-      - name: Build for App Service
-        uses: azure/appservice-build@v2
+      - uses: actions/download-artifact@v2
         with:
-          platform: python
-          platform-version: '3.8'
+          name: python-app
+          path: .
+
+      - name: Log in to Azure CLI
+        with:
+          creds: ${{ secrets.AZURE_SERVICE_PRINCIPAL }}
+    
+      - name: Disable static collection on App Service
+        run: |
+          az webapp 
 
       - name: Deploy to App Service
         uses: azure/webapps-deploy@v2

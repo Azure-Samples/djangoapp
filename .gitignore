@@ -119,3 +119,5 @@ dmypy.json
 
 # Azure
 .azure/
+
+staticfiles/
