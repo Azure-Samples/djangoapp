@@ -8,6 +8,9 @@ on:
     branches: 
       - master
 
+env:
+  WEBAPP_NAME: 'freeberg-django'  # Replace with the name of your Azure web app
+
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
@@ -56,12 +59,24 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_SERVICE_PRINCIPAL }}
     
-      - name: Disable static collection on App Service
-        run: |
-          az webapp 
+      - name: Disable static collection and set migration command on App Service
+        uses: Azure/appservice-settings@v1
+        with:  
+          app-name: ${{ env.WEBAPP_NAME }}
+          app-settings-json: '[
+            { 
+              "name": "DISABLE_COLLECTSTATIC", 
+              "value": "false", 
+              "slotSetting": false 
+            },
+            { 
+              "name": "POST_BUILD_COMMAND", 
+              "value": "python manage.py makemigrations && python manage.py migrate", 
+              "slotSetting": false 
+            }
+          ]'
 
       - name: Deploy to App Service
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'freeberg-django'
-          publish-profile: ${{ secrets.your_publish_profile_secret_name }}
+          app-name: ${{ env.WEBAPP_NAME}}
