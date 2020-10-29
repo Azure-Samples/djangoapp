@@ -65,18 +65,15 @@ jobs:
         with:  
           app-name: ${{ env.WEBAPP_NAME }}
           app-settings-json: |
-            "[
-              {
+            "[{
                 'name': 'DISABLE_COLLECTSTATIC', 
                 'value': 'true', 
                 'slotSetting': false 
-              },
-              { 
+              },{ 
                 'name': 'POST_BUILD_COMMAND', 
                 'value': 'python manage.py makemigrations && python manage.py migrate', 
                 'slotSetting': false 
-              }
-            ]"
+            }]"
 
       - name: Deploy to App Service
         uses: azure/webapps-deploy@v2
