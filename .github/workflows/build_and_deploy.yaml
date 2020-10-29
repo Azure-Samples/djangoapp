@@ -34,6 +34,9 @@ jobs:
     - name: Collect static
       run: python manage.py collectstatic
 
+    - name: Run tests
+      run: python manage.py test
+    
     - name: Upload artifact for deployment jobs
       uses: actions/upload-artifact@v2
       with:
@@ -41,9 +44,6 @@ jobs:
         path: |
           . 
           !venv/
-
-    - name: Run tests
-      run: python manage.py test
   
   deploy-to-webapp:
     needs: build-and-test
@@ -65,7 +65,7 @@ jobs:
         with:  
           app-name: ${{ env.WEBAPP_NAME }}
           app-settings-json: |
-            [
+            "[
               {
                 'name': 'DISABLE_COLLECTSTATIC', 
                 'value': 'true', 
@@ -76,7 +76,7 @@ jobs:
                 'value': 'python manage.py makemigrations && python manage.py migrate', 
                 'slotSetting': false 
               }
-            ]
+            ]"
 
       - name: Deploy to App Service
         uses: azure/webapps-deploy@v2
