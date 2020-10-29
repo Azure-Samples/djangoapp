@@ -64,7 +64,7 @@ jobs:
         with:  
           app-name: ${{ env.WEBAPP_NAME }}
           app-settings-json: '[
-            { 
+            {
               "name": "DISABLE_COLLECTSTATIC", 
               "value": "true", 
               "slotSetting": false 
@@ -80,3 +80,4 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: ${{ env.WEBAPP_NAME}}
+
