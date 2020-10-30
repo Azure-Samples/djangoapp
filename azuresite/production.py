@@ -26,12 +26,19 @@ hostname = os.environ['DBHOST']
 
 # Configure Postgres database; the full username is username@servername,
 # which we construct using the DBHOST value.
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': os.environ['DBNAME'],
+#         'HOST': hostname + ".postgres.database.azure.com",
+#         'USER': os.environ['DBUSER'] + "@" + hostname,
+#         'PASSWORD': os.environ['DBPASS'] 
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ['DBNAME'],
-        'HOST': hostname + ".postgres.database.azure.com",
-        'USER': os.environ['DBUSER'] + "@" + hostname,
-        'PASSWORD': os.environ['DBPASS'] 
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
