@@ -38,5 +38,5 @@ jobs:
     - name: Deploy to App Service
       uses: azure/webapps-deploy@v2
       with:
-        app-name: 'freeberg-django'
-        publish-profile: ${{ secrets.your_publish_profile_secret_name }}
+        app-name: 'freeberg-django-container-build'
+        publish-profile: ${{ secrets.CONTAINER_BUILD_SITE_PUB_PROFILE }}
