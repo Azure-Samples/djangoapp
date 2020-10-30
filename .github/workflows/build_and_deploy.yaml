@@ -66,7 +66,7 @@ jobs:
         uses: Azure/appservice-settings@v1
         with:  
           app-name: ${{ env.WEBAPP_NAME }}
-          app-settings-json: '[{ "name": "DISABLE_COLLECTSTATIC", "value": "true" }, { "name": "POST_BUILD_COMMAND",  "value": "python manage.py makemigrations && python manage.py migrate" }, { "name": "SCM_DO_BUILD", "value": "true" }]'
+          app-settings-json: '[{ "name": "DISABLE_COLLECTSTATIC", "value": "true" }, { "name": "POST_BUILD_COMMAND",  "value": "python manage.py makemigrations && python manage.py migrate" }, { "name": "SCM_DO_BUILD_DURING_DEPLOYMENT", "value": "true" }]'
 
       - name: Deploy to App Service
         uses: azure/webapps-deploy@v2
