@@ -55,8 +55,6 @@ jobs:
           name: python-app
           path: .
       
-      - run: ls -a
-
       - name: Log in to Azure CLI
         uses: azure/login@v1
         with:
