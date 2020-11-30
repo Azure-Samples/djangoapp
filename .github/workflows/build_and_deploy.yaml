@@ -1,0 +1,73 @@
+# For more info on Python, GitHub Actions, and Azure App Service 
+# please head to https://aka.ms/python-webapps-actions
+
+name: Build and deploy Django app to Azure App Service
+
+on:
+  push:
+    branches: 
+      - master
+
+env:
+  WEBAPP_NAME: 'freeberg-django'  # Replace with the name of your Azure web app
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Setup Python version
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+
+    - name: Create and start virtual environment
+      run: |
+        python3 -m venv venv
+        source venv/bin/activate
+
+    - name: Install dependencies
+      run: pip install -r requirements.txt
+
+    - name: Collect static
+      run: python manage.py collectstatic
+
+    - name: Run tests
+      run: python manage.py test
+    
+    - name: Upload artifact for deployment jobs
+      uses: actions/upload-artifact@v2
+      with:
+        name: python-app
+        path: |
+          . 
+          !venv/
+  
+  deploy-to-webapp:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/download-artifact@v2
+        with:
+          name: python-app
+          path: .
+      
+      - name: Log in to Azure CLI
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_SERVICE_PRINCIPAL }}
+    
+      - name: Disable static collection and set migration command on App Service
+        uses: Azure/appservice-settings@v1
+        with:  
+          app-name: ${{ env.WEBAPP_NAME }}
+          app-settings-json: '[{ "name": "DISABLE_COLLECTSTATIC", "value": "true" }, { "name": "POST_BUILD_COMMAND",  "value": "python manage.py makemigrations && python manage.py migrate" }, { "name": "SCM_DO_BUILD_DURING_DEPLOYMENT", "value": "true" }, { "name": "DJANGO_ENV", "value": "production"}]'
+
+      - name: Deploy to App Service
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: ${{ env.WEBAPP_NAME}}
+
