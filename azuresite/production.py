@@ -1,5 +1,17 @@
 from .settings import *
 import os
+import requests
+
+identity_endpoint = os.environ["IDENTITY_ENDPOINT"]
+identity_header = os.environ["IDENTITY_HEADER"]
+client_id = os.environ["CLIENT_ID"]
+
+def get_bearer_token(resource_uri):
+    token_auth_uri = f"{identity_endpoint}?resource={resource_uri}&client_id={client_id}&api-version=2019-08-01"
+    head_msi = {'X-IDENTITY-HEADER':identity_header}
+    resp = requests.get(token_auth_uri, headers=head_msi)
+    access_token = resp.json()['access_token']
+    return access_token
 
 # Configure the domain name using the environment variable
 # that Azure automatically creates for us.
@@ -32,6 +44,7 @@ DATABASES = {
         'NAME': os.environ['DBNAME'],
         'HOST': hostname + ".postgres.database.azure.com",
         'USER': os.environ['DBUSER'] + "@" + hostname,
-        'PASSWORD': os.environ['DBPASS'] 
+        'PASSWORD': get_bearer_token('https://ossrdbms-aad.database.windows.net'),
+        'OPTIONS': {'sslmode': 'require'}
     }
 }
