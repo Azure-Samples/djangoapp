@@ -5,7 +5,6 @@ from django.views import generic
 from django.utils import timezone
 
 from .models import Choice, Question
-import datetime
 
 class IndexView(generic.ListView):
     template_name = 'polls/index.html'
@@ -23,7 +22,11 @@ class IndexView(generic.ListView):
 class DetailView(generic.DetailView):
     model = Question
     template_name = 'polls/detail.html'
-    queryset = Question.objects.filter(pub_date__lte=datetime.datetime.now())
+    def get_queryset(self):
+        """
+        Update the model, excluding any questions that aren't published yet.
+        """
+        return Question.objects.filter(pub_date__lte=timezone.now())
 
 class ResultsView(generic.DetailView):
     model = Question
