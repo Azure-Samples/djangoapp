@@ -1,5 +1,6 @@
 # For more info on Python, GitHub Actions, and Azure App Service 
 # please head to https://aka.ms/python-webapps-actions
+# AZURE_CREDENTIALS replaces AZURE_SERVICE_PRINCIPAL
 
 name: Build and deploy Django app to Azure App Service
 
@@ -9,7 +10,7 @@ on:
       - master
 
 env:
-  WEBAPP_NAME: 'freeberg-django'  # Replace with the name of your Azure web app
+  WEBAPP_NAME: 'ccsw'  # Replaced placeholder with the name of my Azure web app
 
 jobs:
   build-and-test:
@@ -58,7 +59,7 @@ jobs:
       - name: Log in to Azure CLI
         uses: azure/login@v1
         with:
-          creds: ${{ secrets.AZURE_SERVICE_PRINCIPAL }}
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
     
       - name: Disable static collection and set migration command on App Service
         uses: Azure/appservice-settings@v1
