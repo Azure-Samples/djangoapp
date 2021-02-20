@@ -9,7 +9,7 @@ on:
       - master
 
 env:
-  WEBAPP_NAME: 'freeberg-django'  # Replace with the name of your Azure web app
+  WEBAPP_NAME: 'ccsw'  # Replace with the name of your Azure web app
 
 jobs:
   build-and-test:
