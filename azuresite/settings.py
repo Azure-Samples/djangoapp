@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'polls.apps.PollsConfig',
+    'cars.apps.CarsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -76,10 +77,14 @@ WSGI_APPLICATION = 'azuresite.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+   'default': {
+   'ENGINE': 'django.db.backends.postgresql_psycopg2',
+   'NAME': os.environ.get('DBNAME'),
+   'USER': os.environ.get('DBUSER'),
+   'PASSWORD': os.environ.get('DBPASS'),
+   'HOST': os.environ.get('DBHOST'),
+   'PORT': '5432',
+  }
 }
 
 
