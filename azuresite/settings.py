@@ -79,10 +79,11 @@ WSGI_APPLICATION = 'azuresite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'OPTIONS': {
-            'service': 'my_service',
-            'passfile': '.my_pgpass',
-        },
+        'NAME': 'papermasters',
+        'USER': 'karen',
+        'PASSWORD': 'Efromm1967',
+        'HOST': 'pmserver.postgres.database.azure.com',
+        'PORT': '5432',
     }
 }
 
