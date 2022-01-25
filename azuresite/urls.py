@@ -15,11 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-from papermasters.views import topicDetailView
 
 urlpatterns = [
     path('', include('papermasters.urls')),
     path('papermasters/', include('papermasters.urls')),
     path('admin/', admin.site.urls),
-    path('papermasters/<int:pk>/', topicDetailView.as_view(), name='topic-detail'),
 ]

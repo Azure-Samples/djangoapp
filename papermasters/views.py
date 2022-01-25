@@ -6,12 +6,3 @@ from papermasters.models import topic
 
 def index(request):
     return HttpResponse("Hello, world. You're at the Paper Masters index.")
-
-class topicDetailView(DetailView):
-
-    model = topic
-    
-class topic(DetailView):
-    model = topicPkAndSlug
-    query_pk_and_slug = False
-
