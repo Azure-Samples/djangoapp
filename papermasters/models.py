@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.text import slugify
 from django.urls import reverse
 
 class subject(models.Model):
@@ -11,6 +12,7 @@ class subtopic(models.Model):
 class topic(models.Model):
     topic_text = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200, null=True)
+    meta_title = models.CharField(max_length=200)
     description = models.CharField(max_length=300)
     content = models.TextField(blank=True)
     related = models.TextField(blank=True)
@@ -23,6 +25,8 @@ class topic(models.Model):
     def __str__(self):
         return self.title
 
-    def get_absolute_url(self):
-        return reverse('topic_detail', kwargs={'slug': self.slug})
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.topic_text)
+        super(topic, self).save(*args, **kwargs)
     
