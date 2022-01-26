@@ -11,8 +11,8 @@ class subtopic(models.Model):
 
 class topic(models.Model):
     topic_text = models.CharField(max_length=200)
-    slug = models.SlugField(max_length=200, null=True)
-    meta_title = models.CharField(max_length=200)
+    slug = models.SlugField(max_length=200, blank=True)
+    meta_title = models.CharField(max_length=200, blank=True)
     description = models.CharField(max_length=300)
     content = models.TextField(blank=True)
     related = models.TextField(blank=True)
