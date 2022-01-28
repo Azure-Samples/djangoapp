@@ -19,7 +19,7 @@ class topic(models.Model):
     topic_text = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200, blank=True)
     meta_title = models.CharField(max_length=200, blank=True)
-    description = models.CharField(max_length=300)
+    description = models.CharField(max_length=400)
     content = models.TextField(blank=True)
     related = models.TextField(blank=True)
     image = models.ImageField(upload_to='papermasters/media/images', blank=True)
