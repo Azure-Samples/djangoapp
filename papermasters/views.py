@@ -3,4 +3,4 @@ from django.http import HttpResponse
 
 
 def topic(request):
-    return render(request, 'topic.html')
+    return render(request, 'papermasters/topic.html')
