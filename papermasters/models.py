@@ -32,8 +32,6 @@ class topic(models.Model):
     def __str__(self):
         return self.topic_text
 
-    def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = slugify(self.topic_text)
-        super(topic, self).save(*args, **kwargs)
+    def get_absolute_url(self):
+        return reverse('topic_detail', args=[str(self.id)])
     
