@@ -1,1 +1,14 @@
 <h1>Wow! I'm the best</h1>
+{% load static %}
+
+
+{% for topic in topics %}
+
+
+<h2>{{ topic.topic_text }}</h2>
+
+<img src="{% static 'papermasters/media/image-placeholder500x500.jpeg' %}" height="300" width="225">
+
+<p>{{ topic.content }} </p>
+
+{% endfor %}
