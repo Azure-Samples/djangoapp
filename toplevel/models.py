@@ -39,7 +39,7 @@ class Resource(models.Model):
         ('R', 'Type of Research'),
         ('P', 'Type of Paper'),
     )
-    type_of_resource = models.TextChoices(max_lenght=1, choices=TYPE_OF_RESOURCE)
+    type_of_resource = models.CharField(max_length=1, choices=TYPE_OF_RESOURCE)
     
     def __str__(self):
         return self.title
