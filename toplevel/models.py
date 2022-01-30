@@ -6,7 +6,7 @@ from django.urls import reverse
 class Service(models.Model):
     id =  models.IntegerField(primary_key=True)
     title = models.CharField(max_length=200)
-    slug = models.SlugField(max_length=200,  unique=True, blank=True)
+    slug = models.SlugField(max_length=200, null = True, unique = True, blank = True)
     meta_title = models.CharField(max_length=200, blank=True)
     meta_description = models.CharField(max_length=400)
     content = models.TextField(blank=True)
@@ -28,7 +28,7 @@ class Service(models.Model):
 class Resource(models.Model):
     id =  models.IntegerField(primary_key=True)
     title = models.CharField(max_length=200)
-    slug = models.SlugField(max_length=200, null = True, blank = True)
+    slug = models.SlugField(max_length=200, null = True, unique = True, blank = True)
     meta_title = models.CharField(max_length=200, blank=True)
     meta_description = models.CharField(max_length=400)
     content = models.TextField(blank=True)
