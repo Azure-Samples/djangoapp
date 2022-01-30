@@ -1,8 +1,9 @@
 from django.urls import path
 from . import views
 
-urlpatterns = [
-    path('', views.topic, name= 'topic'),
-    path('<int:pk>',  views.topic, name='topic'),
+app_name='papermasters'
 
+urlpatterns = [
+    path('', views.topic_view, name= 'topic_view'),
+    path('<str:subject>/<str:subtopic>/<slug:slug>/', views.topic_view, name= 'topic_view')
 ]

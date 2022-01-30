@@ -1,1 +1,11 @@
 <h1>Wow! I'm the best</h1>
+
+{% for topic in topics %}
+ 
+
+{{ topic.content | safe }}
+
+
+{{ topic.related }}
+
+{% endfor %}
