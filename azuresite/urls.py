@@ -20,5 +20,6 @@ urlpatterns = [
     path('', include('papermasters.urls')),
     path('papermasters/', include('papermasters.urls', namespace='papermasters')),
     path('admin/', admin.site.urls),
-    path('toplevel/', include('toplevel.urls')),
+    path('services/', include('toplevel.urls')),
+    path('resources/', include('toplevel.urls')),
 ]
