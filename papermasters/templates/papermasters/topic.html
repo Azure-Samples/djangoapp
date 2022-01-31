@@ -1,3 +1,11 @@
 <h1>Wow! I'm the best</h1>
 
-{{ topic.slug }}
+{% for topic in topic_objects %}
+ 
+
+{{ topic.content | safe }}
+<img src="{{ topic.image_url }}">
+
+{{ topic.related | safe }}
+
+{% endfor %}

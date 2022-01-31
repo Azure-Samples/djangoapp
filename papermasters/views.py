@@ -7,3 +7,6 @@ from .models import topic
 def topic_view(request):
     return render(request, 'papermasters/topic.html')
 
+def topic_view(request):
+    topic_objects = topic.objects.all()[:5]
+    return render(request, 'papermasters/topic.html', {'topic_objects':topic_objects})
