@@ -7,6 +7,12 @@ from toplevel.models import Service
 def toplevel_view(request):
     return render(request, 'toplevel/toplevel.html')
 
+def services_view(request):
+    return render(request, 'toplevel/services.html')
+
+def resources_view(request):
+    return render(request, 'toplevel/resources.html')
+
 def toplevel_view(request): 
-    toplevel_objects = Service.objects.all()
+    toplevel_objects = Service.objects.all()[:3]
     return render(request, 'toplevel/toplevel.html', {'toplevel_objects':toplevel_objects})
