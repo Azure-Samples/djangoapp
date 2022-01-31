@@ -10,3 +10,9 @@ def topic_view(request):
 def topic_view(request):
     topic_objects = topic.objects.all()[:5]
     return render(request, 'papermasters/topic.html', {'topic_objects':topic_objects})
+
+def detail(request, id):
+    topic_details = get_object_or_404(topic, id=self.kwargs['slug'])
+    return render(request, 'papermasters/topic-details.html',{'topic_detatils':topic_details})
+
+
