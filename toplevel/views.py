@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from toplevel.models import Service
 
-def index(request):
+def IndexView(request):
         return render(request, 'toplevel/index.html')
 
 def services_view(request):
