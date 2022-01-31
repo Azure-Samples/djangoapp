@@ -3,9 +3,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from toplevel.models import Service
 
-
-def toplevel_view(request):
-    return render(request, 'toplevel/toplevel.html')
+def index(request):
+        return render(request, 'toplevel/index.html')
 
 def services_view(request):
     return render(request, 'toplevel/services.html')
