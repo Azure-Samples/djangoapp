@@ -37,7 +37,7 @@ class topic(models.Model):
     
     def save(self, *args, **kwargs): # new
         if not self.slug:
-            self.slug = slugify(self.topic_text)
+            self.slug = slugify(self.id)
         return super().save(*args, **kwargs)
    
 
