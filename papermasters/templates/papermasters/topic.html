@@ -1,11 +1,8 @@
-<h1>Wow! I'm the best</h1>
+{% extends "base.html" %}
 
-{% for topic in topic_objects %}
- 
+{% block content %}
+<h1>Hey...wtf!</h1>
 
-{{ topic.content | safe }}
-<img src="{{ topic.image_url }}">
+<p>It works...don't know why, but it works!</p>
 
-{{ topic.related | safe }}
-
-{% endfor %}
+{% endblock content %}
