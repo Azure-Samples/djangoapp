@@ -6,7 +6,7 @@ from .models import topic
 
 
 def index(request, slug):
-    slug = '/' + slug
+    slug = slug
     pg = topic.objects.get(slug=slug)
     context = {
         'topic':pg.topic_text,
