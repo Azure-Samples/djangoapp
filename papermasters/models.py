@@ -28,6 +28,7 @@ class topic(models.Model):
     subject = models.ForeignKey(subject, on_delete=models.CASCADE)
     subtopic = models.ForeignKey(subtopic, on_delete=models.CASCADE)
     old_url = models.URLField(blank=True)
+    update_date = models.DateTimeField('Last Updated',)
 
     def __str__(self):
         return self.topic_text
