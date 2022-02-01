@@ -33,8 +33,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'polls.apps.PollsConfig',
-    'papermasters.apps.PapermastersConfig'
-    'toplevel.apps.ToplevelConfig'
+    'papermasters.apps.PapermastersConfig',
+    'toplevel.apps.ToplevelConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
