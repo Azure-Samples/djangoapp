@@ -9,7 +9,7 @@ def topic_view(request):
     return render(request, 'papermasters/topic.html')
 
 def index(request):
-    return HttpResponse("<h1>Gonna get this</h1>")
+    return render(request, 'base.html')
 
 def topic_view(request):
     topic_objects = topic.objects.all()[:5]
