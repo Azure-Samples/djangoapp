@@ -1,12 +1,20 @@
 
 from django.http import Http404
 from django.http import HttpResponse
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
 from .models import topic
 
 
-def index(request):
-    return render(request, 'papermasters/index.html')
+def index(request, slug):
+    slug = '/' + slug
+    pg = topic.objects.get(slug=slug)
+    context = {
+        'topic':pg.topic_text,
+        'content':pg.content,
+        'related':pg.related,
+    }
+    #assert False
+    return render(request, 'papermasters/index.html', context)
 
 def topic_view(request):
     topic_objects = topic.objects.all()[:5]
