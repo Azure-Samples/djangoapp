@@ -1,8 +1,16 @@
 {% extends "papermasters/base.html" %}
 
 {% block content %}
-<h1>Hey...wtf!</h1>
 
-<p>It works...don't know why, but it works!</p>
+{% autoescape off %}
+<h1> {{ topic }}</h1>
 
+<p>It works...don't know why,Topic!</p>
+
+{{ content }}
+
+
+{{ related }}
+
+{% endautoescape %} 
 {% endblock content %}

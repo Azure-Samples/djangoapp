@@ -5,5 +5,5 @@ app_name='papermasters'
 
 urlpatterns = [
     path('', views.index, {'slug':''}, name='home'),
-    path('<str:subject>/<str:subtopic>/<slug:slug>', views.index, name= 'index'),
+    path('<slug:slug>', views.index, name= 'index'),
 ]

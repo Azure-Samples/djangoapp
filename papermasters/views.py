@@ -13,8 +13,7 @@ def index(request, slug):
         'content':pg.content,
         'related':pg.related,
     }
-    #assert False
-    return render(request, 'papermasters/index.html', context)
+    return render(request, 'papermasters/topic.html', context)
 
 def topic_view(request):
     topic_objects = topic.objects.all()[:5]
