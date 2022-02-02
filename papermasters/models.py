@@ -28,16 +28,17 @@ class topic(models.Model):
     subject = models.ForeignKey(subject, on_delete=models.CASCADE)
     subtopic = models.ForeignKey(subtopic, on_delete=models.CASCADE)
     old_url = models.URLField(blank=True)
+    update_date = models.DateTimeField('Last Updated', default='2022-01-31T15:58:44.767594-06:00')
 
     def __str__(self):
         return self.topic_text
 
     def get_absolute_url(self):
-        return reverse('id', args=[str(self.id)])
+        return reverse('slug', args=[str(self.slug)])
     
     def save(self, *args, **kwargs): # new
         if not self.slug:
-            self.slug = slugify(self.id)
+            self.slug = slugify(self.slug)
         return super().save(*args, **kwargs)
    
 
