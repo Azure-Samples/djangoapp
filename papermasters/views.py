@@ -5,7 +5,9 @@ from django.shortcuts import render
 from .models import topic
 
 
-def index(request, slug):
+def index(request, subject, subtopic, slug):
+    subject = subject
+    subtopic = subtopic
     slug = slug
     pg = topic.objects.get(slug=slug)
     context = {
