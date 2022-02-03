@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils.text import slugify
-from django.template.defaultfilters import slugify
+#from django.template.defaultfilters import slugify
 from django.urls import reverse
 
 class Service(models.Model):
@@ -17,11 +17,11 @@ class Service(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('slug', kwargs={'slug': self.slug})
+        return reverse('slug', args=[str(self.slug)])
     
     def save(self, *args, **kwargs): # new
         if not self.slug:
-            self.slug = slugify(self.title)
+            self.slug = slugify(self.slug)
         return super().save(*args, **kwargs)
 
         

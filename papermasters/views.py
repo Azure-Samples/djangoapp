@@ -14,6 +14,7 @@ def index(request, subject, subtopic, slug):
         'topic':pg.topic_text,
         'content':pg.content,
         'related':pg.related,
+        'description':pg.description,
     }
     return render(request, 'papermasters/topic.html', context)
 

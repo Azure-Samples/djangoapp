@@ -6,8 +6,16 @@ from toplevel.models import Service
 def IndexView(request):
         return render(request, 'toplevel/index.html')
 
-def services_view(request):
-    return render(request, 'toplevel/services.html')
+def services_view(request, slug):
+    slug = slug
+    sg = Service.objects.get(slug=slug)
+    context = {
+        'title':sg.title,
+        'content':sg.content,
+        'meta_description':sg.meta_description,
+        'meta_title':sg.meta_title,
+    }
+    return render(request, 'toplevel/services.html', context)
 
 def resources_view(request):
     return render(request, 'toplevel/resources.html')
