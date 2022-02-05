@@ -1,7 +1,5 @@
-from importlib import resources
 from django.shortcuts import render
-from django.http import HttpResponse
-from toplevel.models import Service, Resource
+from toplevel.models import Service
 
 def IndexView(request):
         return render(request, 'toplevel/index.html')
@@ -16,17 +14,6 @@ def services_view(request, slug):
         'meta_title':sg.meta_title,
     }
     return render(request, 'toplevel/services.html', context)
-
-def resources_view(request, slug):
-    slug = slug
-    rg = Resource.objects.get(slug=slug)
-    textcon = {
-        'title':rg.title,
-        'content':rg.content,
-        'meta_description':rg.meta_description,
-        'meta_title':rg.meta_title,
-    }
-    return render(request, 'toplevel/resources.html', textcon)
 
 def toplevel_view(request): 
     toplevel_objects = Service.objects.all()[:3]

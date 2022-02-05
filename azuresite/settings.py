@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'polls.apps.PollsConfig',
     'papermasters.apps.PapermastersConfig',
     'toplevel.apps.ToplevelConfig',
+    'resources.apps.ResourcesConfig'
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
