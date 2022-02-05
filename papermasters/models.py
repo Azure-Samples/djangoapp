@@ -8,6 +8,11 @@ class subject(models.Model):
     def __str__(self):
         return self.name
 
+    def save(self, *args, **kwargs): # new
+        if not self.name:
+            self.name = slugify(self.name)
+        return super().save(*args, **kwargs)
+
 class subtopic(models.Model):
     subtopic_text = models.CharField(max_length=200)
     subject = models.ForeignKey(subject, on_delete=models.CASCADE)
