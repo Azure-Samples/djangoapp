@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from toplevel.models import Resource
+from resources.models import Resource
 
 def resource_view(request, slug):
     slug = slug
@@ -10,4 +10,4 @@ def resource_view(request, slug):
         'meta_description':rg.meta_description,
         'meta_title':rg.meta_title,
     }
-    return render(request, 'resources/resources.html', context)
+    return render(request, 'resources/resource.html', context)
