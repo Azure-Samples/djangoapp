@@ -16,8 +16,8 @@ class subject(models.Model):
         return self.name
 
     def save(self, *args, **kwargs): # new
-        if not self.name:
-            self.name = slugify(self.name)
+        if not self.slug:
+            self.slug = slugify(self.slug)
         return super().save(*args, **kwargs)
 
 class subtopic(models.Model):
@@ -33,6 +33,11 @@ class subtopic(models.Model):
 
     def __str__(self):
         return self.subtopic_text
+
+    def save(self, *args, **kwargs): # new
+        if not self.slug:
+            self.slug = slugify(self.slug)
+        return super().save(*args, **kwargs)
 
 class topic(models.Model):
     topic_text = models.CharField(max_length=200)
