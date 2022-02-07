@@ -4,6 +4,12 @@ from django.urls import reverse
 
 class subject(models.Model):
     name = models.CharField(max_length=100)
+    meta_title = models.CharField(max_length=200, blank=True)
+    meta_description = models.TextField(blank=True)
+    content = models.TextField(blank=True)
+    content_two = models.TextField(blank=True)
+    lower_content = models.TextField(blank=True)
+    old_url = models.URLField(blank=True)
 
     def __str__(self):
         return self.name
