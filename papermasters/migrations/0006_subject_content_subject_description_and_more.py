@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='subject',
             name='description',
-            field=models.CharField(blank=True, max_length=255),
+            field=models.CharField(blank=True, max_length=200),
         ),
         migrations.AddField(
             model_name='subject',
@@ -53,7 +53,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='subtopic',
             name='description',
-            field=models.CharField(blank=True, max_length=255),
+            field=models.CharField(blank=True, max_length=200),
         ),
         migrations.AddField(
             model_name='subtopic',
@@ -83,6 +83,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='topic',
             name='description',
-            field=models.CharField(max_length=255),
+            field=models.CharField(max_length=200),
         ),
     ]
