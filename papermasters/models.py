@@ -4,7 +4,7 @@ from django.urls import reverse
 
 class subject(models.Model):
     name = models.CharField(max_length=100)
-    slug = models.SlugField(max_length=200, blank=True)
+    slug = models.SlugField(max_length=50, blank=True)
     meta_title = models.CharField(max_length=200, blank=True)
     description = models.CharField(blank=True, max_length=200)
     content = models.TextField(blank=True)
@@ -23,7 +23,7 @@ class subject(models.Model):
 class subtopic(models.Model):
     subtopic_text = models.CharField(max_length=200)
     subject = models.ForeignKey(subject, on_delete=models.CASCADE)
-    slug = models.SlugField(max_length=200, blank=True)
+    slug = models.SlugField(max_length=50, blank=True)
     meta_title = models.CharField(max_length=200, blank=True)
     description = models.CharField(blank=True, max_length=200)
     content = models.TextField(blank=True)
@@ -36,7 +36,7 @@ class subtopic(models.Model):
 
 class topic(models.Model):
     topic_text = models.CharField(max_length=200)
-    slug = models.SlugField(max_length=200, blank=True)
+    slug = models.SlugField(max_length=50, blank=True)
     meta_title = models.CharField(max_length=200, blank=True)
     description = models.CharField(max_length=200)
     content = models.TextField(blank=True)
