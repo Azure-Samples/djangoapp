@@ -41,7 +41,7 @@ class topic(models.Model):
     description = models.CharField(max_length=200)
     content = models.TextField(blank=True)
     related = models.TextField(blank=True)
-    image = models.ImageField(upload_to='papermasters/media/images', blank=True)
+    image = models.ImageField(upload_to='static/images', blank=True)
     image_url = models.URLField(blank=True)
     lower_content = models.TextField(blank=True)
     subject = models.ForeignKey(subject, on_delete=models.CASCADE)
