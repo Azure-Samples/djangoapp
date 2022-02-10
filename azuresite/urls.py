@@ -21,5 +21,4 @@ urlpatterns = [
     path('toplevel/', include('toplevel.urls', namespace='toplevel')),
     path('services/', include('toplevel.urls', namespace='toplevel')),
     path('resources/', include('resources.urls', namespace='resources')),
-    path('', include('papermasters.urls', namespace='papermasters')),
 ]

@@ -34,7 +34,6 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'polls.apps.PollsConfig',
     'django_extensions',
-    'papermasters.apps.PapermastersConfig',
     'toplevel.apps.ToplevelConfig',
     'resources.apps.ResourcesConfig',
     'django.contrib.admin',
@@ -44,7 +43,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions.db.fields',
-    'papermasters'
 ]
 
 MIDDLEWARE = [
