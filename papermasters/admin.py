@@ -1,16 +1,9 @@
 from django.contrib import admin
 from .models import topic, subject, subtopic
 
+admin.site.register(subject)
 
-class SubjectAdmin(admin.ModelAdmin):
-    list_display = ('subject_text')
-
-admin.site.register(subject, SubjectAdmin)
-
-class SubtopicAdmin(admin.ModelAdmin):
-    list_display = ('subtopic_text')
-
-admin.site.register(subtopic, SubtopicAdmin)
+admin.site.register(subtopic)
 
 class TopicAdmin(admin.ModelAdmin):
     list_display = ('topic_text', 'subject', 'subtopic', 'update_date')
