@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'polls.apps.PollsConfig',
+    'topics.apps.TopicsConfig',
     'django_extensions',
     'toplevel.apps.ToplevelConfig',
     'resources.apps.ResourcesConfig',
