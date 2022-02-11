@@ -53,7 +53,6 @@ class topic(models.Model):
     description = models.TextField(blank=True)
     content = models.TextField(blank=True)
     related = models.TextField(blank=True)
-    lower_content = models.TextField(blank=True)
     subject = models.ForeignKey(subject, on_delete=models.CASCADE)
     subtopic = models.ForeignKey(subtopic, on_delete=models.CASCADE)
     old_url = models.URLField(blank=True)
