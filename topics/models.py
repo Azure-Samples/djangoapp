@@ -11,7 +11,7 @@ class subject(models.Model):
     content = models.TextField(blank=True)
     content_two = models.TextField(blank=True)
     lower_content = models.TextField(blank=True)
-    old_url = models.URLField(blank=True)
+    old_url = models.CharField(max_length=255, blank=True)
     
 
     def __str__(self):
@@ -35,7 +35,7 @@ class subtopic(models.Model):
     content = models.TextField(blank=True)
     content_two = models.TextField(blank=True)
     lower_content = models.TextField(blank=True)
-    old_url = models.URLField(blank=True)
+    old_url = models.CharField(max_lenght=255, blank=True)
 
     def __str__(self):
         return self.subtopic_text
@@ -58,7 +58,7 @@ class topic(models.Model):
     related = models.TextField(blank=True)
     subject = models.ForeignKey(subject, on_delete=models.CASCADE)
     subtopic = models.ForeignKey(subtopic, on_delete=models.CASCADE)
-    old_url = models.URLField(blank=True)
+    old_url = models.CharField(max_lenght=255, blank=True)
     update_date = models.DateTimeField('Last Updated', default='2022-02-10T15:58:44.767594-06:00')
 
     def __str__(self):
