@@ -3,14 +3,16 @@ from django.utils.text import slugify
 from django.urls import reverse
 
 class subject(models.Model):
+    id = models.IntegerField(primary_key=True)
     subject_text = models.CharField(max_length=100)
+    slug = models.SlugField(max_length = 255, blank = True)
     meta_title = models.CharField(max_length=200, blank=True)
     meta_description = models.TextField(blank=True)
     content = models.TextField(blank=True)
     content_two = models.TextField(blank=True)
     lower_content = models.TextField(blank=True)
     old_url = models.URLField(blank=True)
-    slug = models.SlugField(max_length = 255, blank = True)
+    
 
     def __str__(self):
         return self.subject_text
@@ -24,9 +26,10 @@ class subject(models.Model):
         return super().save(*args, **kwargs)
 
 class subtopic(models.Model):
+    id = models.IntegerField(primary_key=True)
     subtopic_text = models.CharField(max_length=200)
-    subject = models.ForeignKey(subject, on_delete=models.CASCADE)
     slug = models.SlugField(max_length = 255, blank = True)
+    subject = models.ForeignKey(subject, on_delete=models.CASCADE)
     meta_title = models.CharField(max_length=200, blank=True)
     meta_description = models.TextField(blank=True)
     content = models.TextField(blank=True)
