@@ -46,6 +46,7 @@ class subtopic(models.Model):
         return super().save(*args, **kwargs)
 
 class topic(models.Model):
+    id = models.IntegerField(primary_key=True)
     topic_text = models.CharField(max_length=200)
     slug = models.SlugField(max_length = 255, null = True, blank = True)
     meta_title = models.CharField(max_length=200, blank=True)
@@ -58,7 +59,7 @@ class topic(models.Model):
     subject = models.ForeignKey(subject, on_delete=models.CASCADE)
     subtopic = models.ForeignKey(subtopic, on_delete=models.CASCADE)
     old_url = models.URLField(blank=True)
-    update_date = models.DateTimeField('Last Updated', default='2022-01-31T15:58:44.767594-06:00')
+    update_date = models.DateTimeField('Last Updated', default='2022-02-10T15:58:44.767594-06:00')
 
     def __str__(self):
         return self.topic_text
