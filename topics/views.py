@@ -24,7 +24,6 @@ def subject_view(request, slug):
         'subject':sg.subject_text,
         'meta_title':sg.meta_title,
         'content_two':sg.content_two,
-        'subject':sg.subject_text,
         'content':sg.content,
         'description':sg.meta_description,
     }
