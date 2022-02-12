@@ -32,15 +32,17 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'polls.apps.PollsConfig',
-    'papermasters.apps.PapermastersConfig',
+    'topics.apps.TopicsConfig',
+    'django_extensions',
     'toplevel.apps.ToplevelConfig',
+    'resources.apps.ResourcesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions.db.fields',
 ]
 
 MIDDLEWARE = [
@@ -128,5 +130,3 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
-
-DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
