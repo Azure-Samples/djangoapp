@@ -60,6 +60,7 @@ class topic(models.Model):
     subject = models.ForeignKey(subject, on_delete=models.CASCADE)
     subtopic = models.ForeignKey(subtopic, on_delete=models.CASCADE)
     old_url = models.CharField(max_length=255, blank=True)
+    new_url = models.CharField(max_length=255, blank=True)
     update_date = models.DateTimeField('Last Updated', default='2022-02-10T15:58:44.767594-06:00')
 
     def __str__(self):
