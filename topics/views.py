@@ -1,7 +1,7 @@
 from django.http import Http404
 from django.http import HttpResponse
 from django.shortcuts import render
-from .models import topic, subject
+from .models import topic, subject, subtopic
 
 
 def index(request, subject, subtopic, slug):
@@ -28,6 +28,19 @@ def subject_view(request, slug):
         'description':sg.meta_description,
     }
     return render(request, 'topics/subject.html', context)
+
+def subtopic_view(request, subject, slug):
+    subject = subject
+    slug = slug
+    spg = subtopic.objects.get(slug=slug)
+    context = {
+        'subtopic':spg.subtopic_text,
+        'meta_title':spg.meta_title,
+        'content_two':spg.content_two,
+        'content':spg.content,
+        'description':spg.meta_description,
+    }
+    return render(request, 'topics/subtopic.html', context)
 
 def topic_view(request):
     topic_objects = topic.objects.all()[:5]
