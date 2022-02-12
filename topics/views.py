@@ -15,7 +15,7 @@ def index(request, subject, subtopic, slug):
         'related':pg.related,
         'description':pg.description,
     }
-    return render(request, 'papermasters/topic.html', context)
+    return render(request, 'topics/topic.html', context)
 
 def subject_view(request, subject):
     subject = subject
