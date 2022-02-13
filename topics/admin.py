@@ -19,7 +19,7 @@ class SubtopicAdmin(admin.ModelAdmin):
 admin.site.register(subtopic, SubtopicAdmin)
 
 class TopicAdmin(admin.ModelAdmin):
-    list_display = ('id', 'topic_text', 'subject', 'subtopic', 'update_date')
+    list_display = ('id', 'topic_text', 'slug', 'subject', 'subtopic', 'update_date')
     ordering = ('id', 'subject', 'subtopic', 'topic_text')
     search_fields = ('topic_text', 'content')
 
