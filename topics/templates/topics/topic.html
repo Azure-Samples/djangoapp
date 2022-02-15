@@ -50,18 +50,7 @@
   </section>
 
   {% endblock header %} 
-
-  {% block breadcrumb %}
-
-<nav class="breadcrumb breadbar px-5 py-4" aria-label="breadcrumbs">
-  <ul>
-    <li><a href="#">Bulma</a></li>
-    <li><a href="#">Documentation</a></li>
-    <li><a href="#">Components</a></li>
-    <li class="is-active"><a href="#" aria-current="page">Breadcrumb</a></li>
-  </ul>
-</nav>
-  {% endblock breadcrumb %} 
+ 
 
 
   {% block content %}
@@ -71,7 +60,7 @@
       <div class="columns is-multiline">
         <div class="column is-8">
           <div class="boxbox has-background-white-ter p-6"> 
-            <div class="has-text-grey mb-5 conStyle">
+            <div class="conStyle has-text-grey mb-5">
                 {{ content|safe }}
             </div>
   
@@ -103,10 +92,10 @@
       <div class="columns"> 
         <div class="column boxbox is-8"> 
           <h3 class="mb-5 is-size-3 is-size-3-mobile has-text-weight-bold has-text-centered">Related Research Paper Topics</h3>
-          <div class="optimShadBox has-text-grey-dark tabsesPara has-background-primary-light">
+          <div class="optimShadBox conStyle has-text-grey-dark has-background-primary-light">
             {{ related|safe }}
             </div>
-
+ 
         </div>
       </div> 
     </div>  
