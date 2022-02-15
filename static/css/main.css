@@ -157,7 +157,12 @@ div.content ul li {
   text-align: center;
   color: #071425;
 } 
-
+.conStyle h4 {
+  font-size: 30px;
+  margin-bottom: 20px; 
+  text-align: center;
+  color: #071425;
+} 
 .conStyle ul { 
   margin-bottom: 20px;
 }
