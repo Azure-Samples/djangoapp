@@ -11,6 +11,7 @@ def index(request, subject, subtopic, slug):
     pg = topic.objects.get(slug=slug)
     context = {
         'topic':pg.topic_text,
+        'meta_title':pg.meta_title,
         'content':pg.content,
         'related':pg.related,
         'description':pg.description,
