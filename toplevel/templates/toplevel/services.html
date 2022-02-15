@@ -1,11 +1,67 @@
-<h2>Welcom to the Services View!</h2>
-
-{% for service in toplevel_objects %}
-
-
-<h2>{{ service.title }}</h2>
+{% extends "topics/base.html" %}
+{% load static %}
 
 
-<p>{{ service.content | safe }} </p>
+{% block meta %}
+<meta charset="utf-8">
+    {% block title %}<title>{{ meta_title }}</title>{% endblock title %} 
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% block description %}<meta name="description" content="{{ description }}">{% endblock description %} 
+    <link href="{% static 'css/main.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/bulma.min.css' %}" rel="stylesheet" type="text/css"> 
+    <link rel="icon" href="favicon.ico">
+    <script src="js/main.js"></script> 
+    <meta name="google-site-verification" content="68SFwjLkdmv-QYy5XT-zDZkncLLKRRkMqoyCSnaRa50" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2687646-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-{% endfor %}
+  gtag('config', 'UA-2687646-1');
+</script>
+{% endblock meta %} 
+
+
+{% block header %}
+
+<section class="section is-medium mt-6" style="background-image: linear-gradient(to right,rgba(7,20,37,.98) 0,rgba(7,20,37,.1) 100%), url('https://images.pexels.com/photos/3775128/pexels-photo-3775128.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260'); background-repeat: no-repeat; background-size: cover;">
+    <div class="container">
+      <div class="columns is-multiline">
+        <div class="column is-5-desktop is-7-tablet my-2">
+          <div class="glassDark px-4 py-3"> 
+            <h4 class="mt-3 mb-3 p-4 is-size-4 has-text-dark has-text-weight-bold has-text-centered">Need Help Writing a Paper?</h4>
+            <p class="has-text-black-bis mb-5 has-text-centered">Have Paper Masters custom write your project today!</p>
+            <div class="has-text-grey-lighter mb-1 ml-6 mb-4">
+              <li>24/7 Customer Support</li>
+              <li>Free Plagiarism Check</li>
+              <li>Writing at Your Level</li>
+              <li>Writers All Have Advanced Degrees</li>
+              <li>Will Follow Specific Instructions</li>  
+            </div>
+            <p class="has-text-black-bis mb-5 has-text-centered">Have Paper Masters custom write your project today!</p>
+            <div class="buttons is-centered mb-4 p-3"><a class="button is-warning is-medium has-text-black" href="#">Yes! Write My Paper!</a></div>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% endblock header %} 
+
+  {% block content %}
+ 
+  <section class="section">
+    <div class="container">
+      <div class="columns is-multiline">
+        <div class="column is-8">
+          <div class="boxbox has-background-white-ter p-6"> 
+            <div class="conStyle has-text-grey mb-5">
+                {{ content|safe }}
+            </div>
+  
+          </div>
+        </div> 
+        {% endblock content %}
