@@ -136,7 +136,7 @@ div.content ul li {
 }
 .conStyle p {
   font-size: 16px;
-  margin-bottom: 20px; 
+  margin-bottom: 18px; 
 }
 .conStyle h1 {
   font-size: 30px;
@@ -144,16 +144,16 @@ div.content ul li {
   text-align: center;
   color: #071425;
 } 
-.conStyle h2, h3 {
+.conStyle h2 {
   font-size: 24px;
-  margin-bottom: 20px;
+  margin: 20px 0px;
   text-align: center;
   color: #071425;
 } 
 
 .conStyle h3 {
   font-size: 24px;
-  margin-bottom: 20px;
+  margin: 20px 0px;
   text-align: center;
   color: #071425;
 } 
@@ -161,6 +161,11 @@ div.content ul li {
 .conStyle ul { 
   margin-bottom: 20px;
 }
+
+.conStyle ol { 
+  margin-bottom: 20px;
+}
+
 .conStyle img { 
   padding: 5px;
 }
