@@ -1,16 +1,97 @@
-{% load static %}
-<!doctype html>
+{% load static %} 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% block meta %}
+    {% endblock meta %}  
 
+  </head>
+  <body> 
 
 <header>
-<img src= "{% static 'images/logo_large.png' %}"
+    <nav class="navbar is-fixed-top py-4 pr-6 pl-6">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="#">
+            <img src= "{% static 'images/bulma-plain-assets/logos/PMlogo-white.svg' %}" alt="" width="96px">
+          </a>
+          <a class="navbar-burger" role="button" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span> 
+            <span aria-hidden="true"></span> 
+          </a>
+        </div>
+        <div class="navbar-menu">
+          <div class="navbar-end"><a class="navbar-item" href="#">Home</a><a class="navbar-item" href="#">Services</a><a class="navbar-item" href="#">Prices</a><a class="navbar-item" href="#">Subjects</a></div>
+          <div class="navbar-item"><a class="button is-warning has-text-weight-bold mr-1" href="#">Order</a></div>
+          <div class="field has-addons">
+            <div class="control mt-2 pl-2">
+              <input class="input" type="search" placeholder="Search" aria-label="Search">
+            </div>
+            <div class="control mt-2 pr-2">
+              <button class="button" type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor" style="width: 24px;height: 24px">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+              </button>
+            </div>
+          </div> 
+        </div>
+      </nav>
 
+      {% block header %}
+            
+      {% endblock header %}
 
 </header>
-<h1>Base Template Header for Illustration</h1>
 
-{% block content%}
+{% block breadcrumb %}
+            
+      {% endblock breadcrumb %}
 
-<p>Shit should go in here</p>
+ 
+            {% block content %}
+            
+            {% endblock content %}
+         
 
-{% endblock content %}
+
+
+<footer class="section">
+    <div class="container pb-5 has-text-centered">
+      <a class="mx-auto mb-4 is-inline-block" href="#">
+        <img class="image" src="{% static 'images/bulma-plain-assets/logos/PMlogo-white.svg' %}" alt="Paper Masters Logo" width="96px">
+      </a>
+      <div class="column is-4 is-offset-4 has-text-light has-text-centered mb-4">
+        <p>Paper Masters</p>
+        <p>Main address: Hunlock Creek, PA 18621</p>
+        <p>Tel:(570) 955-1438</p>
+        <p>eworld@papermasters.com</p>
+      </div>
+      <div>
+        <a class="mr-4 is-inline-block" href="#">
+          <img src="{% static 'images/bulma-plain-assets/socials/facebook.svg' %}">
+        </a>
+        <a class="mr-4 is-inline-block" href="#">
+          <img src="{% static 'images/bulma-plain-assets/socials/twitter.svg' %}">
+        </a> 
+        <a class="mr-4 is-inline-block" href="#">
+          <img src="{% static 'images/bulma-plain-assets/socials/instagram.svg' %}">
+        </a>
+        <a class="is-inline-block" href="#">
+          <img src="{% static 'images/bulma-plain-assets/socials/linkedin.svg' %}">
+        </a>
+      </div>
+    </div>
+    <div class="pt-5" style="border-top: 1px solid #dee2e6;"></div>
+    <div class="container">
+      <div class="column is-full">
+        <p class="has-text-centered has-text-grey">Paper Masters is a custom research paper writing service. Operating for over 20 years, Paper Masters has established itself as the premier custom research paper company on the Internet. Paper Masters is a division of E World Publishing.</p>
+      </div>
+      <div class="pt-5 has-text-centered">
+        <p>Paper Masters - E World Publishing © 2022</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html> 
