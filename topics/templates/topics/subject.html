@@ -58,13 +58,15 @@
         <div class="column is-8">
           <div class="boxbox has-background-white-ter p-6">
             <div class="conStyle has-text-grey mb-5">
-                {{ content|safe }}
-                {{ content_two|safe }}
+                {{ content|safe }} 
             </div>
+
+            </div>
+        </div> 
             {% endblock content %} 
           
     
-  {% block tabs %}
+  {% block topiclist %}
   <section class="section">
     <div class="container">
       <div class="box has-background-grey-lighter p-5">
@@ -123,4 +125,4 @@
         </div>
       </div>
     </div> 
-    {% endblock tabs %} 
+    {% endblock topiclist %} 

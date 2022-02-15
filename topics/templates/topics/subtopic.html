@@ -24,7 +24,7 @@
 {% endblock meta %} 
 
 {% block header %}
-<section class="section is-medium mt-6" style="background-image: linear-gradient(to right,rgba(7,20,37,.98) 0,rgba(7,20,37,.1) 100%), url('https://images.pexels.com/photos/6893892/pexels-photo-6893892.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260'); background-repeat: no-repeat; background-size: cover;">
+<section class="section is-medium mt-6" style="background-image: linear-gradient(to right,rgba(7,20,37,.98) 0,rgba(7,20,37,.1) 100%), url('https://images.pexels.com/photos/3807755/pexels-photo-3807755.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'); background-repeat: no-repeat; background-size: cover;">
     <div class="container">
       <div class="columns is-multiline">
         <div class="column is-5-desktop is-7-tablet my-2">
@@ -58,42 +58,24 @@
           <div class="boxbox has-background-white-ter p-6">
             <div class="conStyle has-text-grey mb-5">
                 {{ content|safe }}
-                {{ content_two|safe }}
             </div>
              
           </div>
-        </div>
-        <div class="column is-one-third"> 
-          <div class="doubleBorder p-3">
-            <h2 class="is-size-2-desktop is-size-3-mobile is-size-4-tablet has-text-weight-bold has-text-grey has-text-centered">Paper Masters</h2>
-            <div class="has-text-light p-4 mb-5">
-              <li>Custom Written Papers</li>
-              <li>100% Plagiarism Free</li>
-              <li>24/7 Customer Service</li>
-              <li>Guaranteed Confidentiality</li>
-              <li>Text us for a Quote Today!</li>
-              <ul><li>1-570-301-7456</li> </ul>
+        </div> 
+        {% endblock content %} 
   
-              <h3 class="is-size-5 has-text-weight-bold has-text-warning has-text-centered p-4">Choosing a Research Paper Topic</h3>
-              <p>Can't decide on a topic? Need ideas or inspiration for research in your field of study? Paper Masters provides topic suggestions to make your decision easier.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+            
     
+  {% block tabs %}
   <section class="section">
     <div class="container"> 
       <div class="columns"> 
-        <div class="column boxbox is-8"> 
-          <h3 class="mb-5 is-size-3 is-size-3-mobile has-text-weight-bold has-text-centered">Related Research Paper Topics</h3>
-          <div class="optimShadBox conStyle has-text-grey-dark has-background-primary-light">
-            {{ related|safe }}
+        <div class="column boxbox is-8">
+            <div class="optimShadBox conStyle has-text-grey-dark has-background-primary-light">
+                {{ content_two|safe }}
             </div>
  
         </div>
       </div> 
-    </div>  
-  </section>
-    {% endblock content %} 
+    </div>   
+    {% endblock tabs %} 
