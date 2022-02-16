@@ -2,9 +2,26 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    {% block meta %}
-    {% endblock meta %}  
+    <meta charset="utf-8">
+    <title>{{ meta_title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="{{ description }}">
+    <link href="{% static 'css/main.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/bulma.min.css' %}" rel="stylesheet" type="text/css">
+    {% block meta-add %}{% endblock meta-add %} 
+    <link rel="icon" href="{% static 'favicon.icon' %}">
+    <script src="{% static 'js/main.js' %}"></script>
+    {% block js-add %}{% endblock js-add %}  
+    <meta name="google-site-verification" content="68SFwjLkdmv-QYy5XT-zDZkncLLKRRkMqoyCSnaRa50" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2687646-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'UA-2687646-1');
+</script>
   </head>
   <body> 
 
@@ -12,7 +29,7 @@
     <nav class="navbar is-fixed-top py-4 pr-6 pl-6">
         <div class="navbar-brand">
           <a class="navbar-item" href="#">
-            <img src= "{% static 'images/bulma-plain-assets/logos/PMlogo-white.svg' %}" alt="" width="96px">
+            <img src= "{% static 'images/bulma-plain-assets/logos/logo-papermasters.svg' %}" alt="" width="96px">
           </a>
           <a class="navbar-burger" role="button" aria-label="menu" aria-expanded="false">
             <span aria-hidden="true"></span>
@@ -22,7 +39,7 @@
         </div>
         <div class="navbar-menu">
           <div class="navbar-end"><a class="navbar-item" href="#">Home</a><a class="navbar-item" href="#">Services</a><a class="navbar-item" href="#">Prices</a><a class="navbar-item" href="#">Subjects</a></div>
-          <div class="navbar-item"><a class="button is-warning has-text-weight-bold mr-1" href="#">Order</a></div>
+          <div class="navbar-item"><a class="button is-warning has-text-weight-bold mr-1 is-outlined" href="#">Order</a></div>
           <div class="field has-addons">
             <div class="control mt-2 pl-2">
               <input class="input" type="search" placeholder="Search" aria-label="Search">
@@ -38,20 +55,42 @@
         </div>
       </nav>
 
-      {% block header %}
-            
-      {% endblock header %}
+      {% block back-style %}
+<section class= "section is-medium mt-6" style="background-image: linear-gradient(to right,rgba(7,20,37,.98) 0,rgba(7,20,37,.05) 100%), url('https://images.pexels.com/photos/5965632/pexels-photo-5965632.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'); background-repeat: no-repeat; background-size: cover;">
+  {% endblock back-style %} 
+  <div class="container">
+    <div class="columns is-multiline">
+      <div class="column is-5-desktop is-7-tablet my-2">
+        <div class="glassDark px-4 py-3"> 
+          <h4 class="mt-3 mb-3 p-4 is-size-4 has-text-dark has-text-weight-bold has-text-centered">Need Help Writing a Paper?</h4>
+          <p class="has-text-black-bis mb-5 has-text-centered">Have Paper Masters custom write your project today!</p>
+          <div class="has-text-grey-lighter mb-1 ml-6 mb-4">
+            <li>24/7 Customer Support</li>
+            <li>Free Plagiarism Check</li>
+            <li>Writing at Your Level</li>
+            <li>Writers All Have Advanced Degrees</li>
+            <li>Will Follow Specific Instructions</li>  
+          </div>
+          <p class="has-text-black-bis mb-5 has-text-centered">Have Paper Masters custom write your project today!</p>
+          <div class="buttons is-centered mb-4 p-3"><a class="button is-warning is-focused is-medium has-text-black" href="#">Yes! Write My Paper!</a></div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
 
 </header>
 
+
+
+{% if breadcrumbs %}
 <nav class="breadcrumb breadbar px-5 py-4" aria-label="breadcrumbs">
-    <ul>
-      <li><a href="#">Bulma</a></li>
-      <li><a href="#">Documentation</a></li>
-      <li><a href="#">Components</a></li>
-      <li class="is-active"><a href="#" aria-current="page">Breadcrumb</a></li>
-    </ul>
-  </nav>
+    {% include "dynamic_breadcrumbs/breadcrumbs.html" with breadcrumbs=breadcrumbs%}
+</nav>
+{% endif %}
+
+  
 
  
             {% block content %}
@@ -94,7 +133,7 @@
 <footer class="section">
     <div class="container pb-5 has-text-centered">
       <a class="mx-auto mb-4 is-inline-block" href="#">
-        <img class="image" src="{% static 'images/bulma-plain-assets/logos/PMlogo-white.svg' %}" alt="Paper Masters Logo" width="96px">
+        <img class="image" src="{% static 'images/bulma-plain-assets/logos/logo-papermasters.svg' %}" alt="Paper Masters Logo" width="96px">
       </a>
       <div class="column is-4 is-offset-4 has-text-light has-text-centered mb-4">
         <p>Paper Masters</p>
