@@ -9,8 +9,8 @@
     <link href="{% static 'css/main.css' %}" rel="stylesheet" type="text/css">
     <link href="{% static 'css/bulma.min.css' %}" rel="stylesheet" type="text/css">
     {% block meta-add %}{% endblock meta-add %} 
-    <link rel="icon" href="favicon.ico">
-    <script src="js/main.js"></script>
+    <link rel="icon" href="{% static 'favicon.icon' %}">
+    <script src="{% static 'js/main.js' %}"></script>
     {% block js-add %}{% endblock js-add %}  
     <meta name="google-site-verification" content="68SFwjLkdmv-QYy5XT-zDZkncLLKRRkMqoyCSnaRa50" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -72,7 +72,7 @@
             <li>Will Follow Specific Instructions</li>  
           </div>
           <p class="has-text-black-bis mb-5 has-text-centered">Have Paper Masters custom write your project today!</p>
-          <div class="buttons is-centered mb-4 p-3"><a class="button is-warning butthead is-medium has-text-black" href="#">Yes! Write My Paper!</a></div>
+          <div class="buttons is-centered mb-4 p-3"><a class="button is-warning is-focused is-medium has-text-black" href="#">Yes! Write My Paper!</a></div>
 
         </div>
       </div>
