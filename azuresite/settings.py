@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'dynamic_breadcrumbs',
     'topics.apps.TopicsConfig',
     'django_extensions',
     'toplevel.apps.ToplevelConfig',
