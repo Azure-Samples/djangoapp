@@ -3,6 +3,7 @@
 <html lang="en">
   <head>
     {% block meta %}
+
     {% endblock meta %}  
 
   </head>
@@ -44,14 +45,15 @@
 
 </header>
 
+
+
+{% if breadcrumbs %}
 <nav class="breadcrumb breadbar px-5 py-4" aria-label="breadcrumbs">
-    <ul>
-      <li><a href="#">Bulma</a></li>
-      <li><a href="#">Documentation</a></li>
-      <li><a href="#">Components</a></li>
-      <li class="is-active"><a href="#" aria-current="page">Breadcrumb</a></li>
-    </ul>
-  </nav>
+    {% include "dynamic_breadcrumbs/breadcrumbs.html" with breadcrumbs=breadcrumbs%}
+</nav>
+{% endif %}
+
+  
 
  
             {% block content %}

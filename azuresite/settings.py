@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'dynamic_breadcrumbs',
     'topics.apps.TopicsConfig',
     'django_extensions',
     'toplevel.apps.ToplevelConfig',
@@ -68,6 +69,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'dynamic_breadcrumbs.context_processors.breadcrumbs',
             ],
         },
     },

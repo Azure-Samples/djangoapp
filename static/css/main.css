@@ -97,6 +97,7 @@ div.content ul li {
 }
 .glassDark {
   background-image: linear-gradient(to right bottom,rgba(255,255,255,.4) 0,rgba(255,255,255,.2) 100%);
+  border-radius: 12px;
   box-shadow: rgba(255,255,255,.4) -20px -20px 45px inset,rgba(0,0,0,.3) 10px 10px 20px,rgba(0,0,0,.03) 5px 5px 10px
 }
 .glassPanel {
