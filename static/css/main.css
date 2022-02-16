@@ -212,7 +212,8 @@ div.content ul li {
 /*---------- Bar for breadcrumbs --------*/
 
 .breadbar{
-  background-color:#080C12;
+  background: rgb(8,12,18);
+  background: linear-gradient(90deg, rgba(8,12,18,1) 0%, rgba(7,25,43,1) 50%, rgba(68,79,94,1) 100%);
   min-height:3.75rem;
   position:relative;
   z-index:0}
