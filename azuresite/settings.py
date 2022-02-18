@@ -32,7 +32,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'dynamic_breadcrumbs',
     'topics.apps.TopicsConfig',
     'django_extensions',
     'toplevel.apps.ToplevelConfig',
@@ -44,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions.db.fields',
+    'dynamic_breadcrumbs',
 ]
 
 MIDDLEWARE = [
