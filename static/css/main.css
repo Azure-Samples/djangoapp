@@ -217,4 +217,26 @@ div.content ul li {
   min-height:3.75rem;
   position:relative;
   z-index:0}
+
+  /* Footer Links Color */
+/* unvisited link */
+.footlink a:link {
+  color: #ba411f;
+}
+
+/* visited link */
+.footlink a:visited {
+  color: #fcef95;
+}
+
+/* mouse over link */
+.footlink a:hover {
+  color: #f1cb1c;
+}
+
+/* selected link */
+.footlink a:active {
+  color: #9197a1;
+}
+
  
