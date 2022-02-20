@@ -121,3 +121,5 @@ dmypy.json
 .azure/
 
 staticfiles/
+
+/static/images
