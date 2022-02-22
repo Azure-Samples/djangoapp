@@ -14,13 +14,13 @@ admin.site.register(subject, SubjectAdmin)
 class SubtopicAdmin(admin.ModelAdmin):
     list_display = ('id','subtopic_text', 'subject', 'slug')
     ordering = ('id','subject', 'subtopic_text')
-    search_fields = ('slug', )
+    search_fields = ('subtopic_text', 'content')
 
 admin.site.register(subtopic, SubtopicAdmin)
 
 class TopicAdmin(admin.ModelAdmin):
-    list_display = ('id', 'topic_text', 'slug', 'subject', 'subtopic', 'update_date')
-    ordering = ('id', 'subject', 'subtopic', 'topic_text')
+    list_display = ( 'id', 'old_url', 'new_url', 'slug',)
+    ordering = ('id', 'topic_text')
     search_fields = ('topic_text', 'content')
 
 admin.site.register(topic, TopicAdmin)
