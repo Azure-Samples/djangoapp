@@ -1,15 +1,12 @@
 from django.contrib import admin
 from .models import topic, subject, subtopic
 
-
 class SubjectAdmin(admin.ModelAdmin):
     list_display = ('id','subject_text', 'slug')
     ordering = ('id', 'subject_text')
     search_fields = ('subject_text', 'content')
 
 admin.site.register(subject, SubjectAdmin)
-
-
 
 class SubtopicAdmin(admin.ModelAdmin):
     list_display = ('id','subtopic_text', 'subject', 'slug')
