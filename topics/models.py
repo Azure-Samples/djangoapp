@@ -2,7 +2,15 @@ from unittest.util import _MAX_LENGTH
 from django.db import models
 from django.utils.text import slugify
 from django.urls import reverse
-from datetime import datetime 
+from datetime import datetime
+from mptt.models import MPTTModel, TreeForeignKey
+
+class Genre(MPTTModel):
+    name = models.CharField(max_length=50, unique=True)
+    parent = TreeForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='children')
+
+    class MPTTMeta:
+        order_insertion_by = ['name']
 
 class subject(models.Model):
     id = models.IntegerField(primary_key=True)
