@@ -11,7 +11,7 @@ class Category(MPTTModel):
     parent = TreeForeignKey("self", on_delete=models.CASCADE, 
     blank=True, null=True, related_name="children"
     )
-    title = models.CharField(("Title"), max_length=200)
+    title = models.CharField(max_length=50, unique=True)
 
     class Meta:
         ordering = ["tree_id", "lft"]
@@ -38,7 +38,7 @@ class topic(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     categories = TreeManyToManyField(
-        "categories.Category",
+        "Category",
         verbose_name=("Categories"),
         related_name="category_ideas",
     )
