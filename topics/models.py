@@ -11,12 +11,12 @@ class Category(MPTTModel):
     parent = TreeForeignKey("self", on_delete=models.CASCADE, 
     blank=True, null=True, related_name="children"
     )
-    title = models.CharField(_("Title"), max_length=200)
+    title = models.CharField(("Title"), max_length=200)
 
     class Meta:
         ordering = ["tree_id", "lft"]
-        verbose_name = _("Category")
-        verbose_name_plural = _("Categories")
+        verbose_name = ("Category")
+        verbose_name_plural = ("Categories")
 
     class MPTTMeta:
         order_insertion_by = ["title"]
@@ -39,7 +39,7 @@ class topic(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     categories = TreeManyToManyField(
         "categories.Category",
-        verbose_name=_("Categories"),
+        verbose_name=("Categories"),
         related_name="category_ideas",
     )
 
