@@ -8,15 +8,14 @@ from mptt.fields import TreeManyToManyField
 
 
 class Category(MPTTModel):
-    parent = TreeForeignKey("self", on_delete=models.CASCADE, 
-    blank=True, null=True, related_name="children"
+    parent = TreeForeignKey(
+        "self", on_delete=models.CASCADE, 
+        blank=True, null=True, related_name="children"
     )
     title = models.CharField(max_length=50, unique=True)
 
     class Meta:
         ordering = ["tree_id", "lft"]
-        verbose_name = ("Category")
-        verbose_name_plural = ("Categories")
 
     class MPTTMeta:
         order_insertion_by = ["title"]
@@ -37,11 +36,7 @@ class topic(models.Model):
     new_url = models.CharField(max_length=255, blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
-    categories = TreeManyToManyField(
-        "Category",
-        verbose_name=("Categories"),
-        related_name="category_ideas",
-    )
+    categories = TreeManyToManyField("Category")
 
     def __str__(self):
         return self.topic_text
