@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_extensions.db.fields',
     'dynamic_breadcrumbs',
-    'mptt',
+    'treebeard',
 ]
 
 MIDDLEWARE = [
