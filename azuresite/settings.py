@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'topics.apps.TopicsConfig',
+    
     'django_extensions',
     'toplevel.apps.ToplevelConfig',
     'resources.apps.ResourcesConfig',
