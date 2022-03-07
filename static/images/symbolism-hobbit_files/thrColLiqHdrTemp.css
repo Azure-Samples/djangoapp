@@ -1,0 +1,572 @@
+@charset "utf-8";
+body  {
+	font: 70% Verdana, Arial, Helvetica, sans-serif;
+	margin: 0; /* it's good practice to zero the margin and padding of the body element to account for differing browser defaults */
+	padding: 0;
+	text-align: center; /* this centers the container in IE 5* browsers. The text is then set to the left aligned default in the #container selector */
+	line-height: 1.3em;
+}
+.thrColLiqHdr #container { 
+	width: 80%;  /* this will create a container 80% of the browser width */
+	width:1024px;
+	max-width:1024px;
+	margin: 0 auto; /* the auto margins (in conjunction with a width) center the page */
+	border: 1px;
+	border-style: groove;
+	border-color: #CCC;
+	background-color:#fff;
+	text-align: left; /* this overrides the text-align: center on the body element. */
+} 
+
+.thrColLiqHdr #header {	
+	background: url(../images/BooksPanoramic.jpg) 	no-repeat;
+	background-color:#036;
+ /* this padding matches the left alignment of the elements in the divs that appear beneath it. If an image is used in the #header instead of text, you may want to remove the padding. */
+	text-align: right;
+	padding: 10px 0; /* using padding instead of margin will allow you to keep the element away from the edges of the div */
+	
+} 
+	
+.thrColLiqHdr #header h1 {
+	margin: 0; /* zeroing the margin of the last element in the #header div will avoid margin collapse - an unexplainable space between divs. If the div has a border around it, this is not necessary as that also avoids the margin collapse */
+
+	text-align: right;
+	color:#666;
+}
+
+/* Tips for mainContent:
+1. the space between the mainContent and sidebars is created with the left and right margins on the mainContent div.
+2. to avoid float drop at a supported minimum 800 x 600 resolution, elements within the mainContent div should be 300px or smaller (this includes images).
+3. in the Internet Explorer Conditional Comment below, the zoom property is used to give the mainContent "hasLayout." This avoids several IE-specific bugs.
+*/
+.thrColLiqHdr #mainContentTemp {
+	float: left;
+	width: 100%;
+	background-image: url(../images/MainContentBackground.jpg);
+	background-repeat:no-repeat;
+	text-align:center;/* the right and left margins on this div element creates the two outer columns on the sides of the page. No matter how much content the sidebar divs contain, the column space will remain. You can remove this margin if you want the #mainContent div's text to fill the sidebar spaces when the content in each sidebar ends. */
+}
+.thrColLiqHdr #breadcrumbs {
+	color: #fff;
+	text-align: left;
+}
+.thrColLiqHdr #breadcrumbs a:link {
+	color: #fff;
+	text-decoration:underline;
+}
+
+.thrColLiqHdr #breadcrumbs a:visited {
+	color: #C96;
+}
+
+.mainBoxNav {
+	width: 25%;
+	height:100%;
+	min-height:300px;
+	margin-top: 15px;
+	margin-left:10px;
+	margin-right: 15px;
+	float: left;
+	text-align:left;
+}
+.mainBoxNav ul {
+	display: inline;
+	text-align:center;
+	list-style-type: none;
+	line-height: 20px;
+	list-style-position:outside;
+}
+
+.thrColLiqHdr .qmparent  {
+	color:#036;
+	text-decoration:none;
+	font-size:110%;
+	font-weight:bold;
+}
+
+.qmchild {
+	font-size:100%;
+	text-indent: 20px;
+	text-decoration:none;
+}
+
+.qmchild li a {
+	text-decoration:none;
+}
+
+.qmchild li a:hover {
+	color:#C60;
+	text-decoration:underline;
+}
+
+.mainBox {
+	border: 0px solid #fff;
+	width: 66%;
+	height: 100%;
+	min-height: 530px;
+	margin-top: 15px;
+	margin-left: 10px;
+	margin-right: 50px;
+	float: left;
+	text-align: left;
+	vertical-align: top;
+}
+.mainBox h1, h2, h3, h4 {
+	font-size:120%;
+	color: #036;
+	text-align:center;
+	font: Verdana, Geneva, sans-serif;
+	font-variant:small-caps;
+	line-height: 1.3em;
+}
+
+.thrColLiqHdr #lowercontent4 h5 {
+	font-size:120%;
+	color: #036;
+	text-align:center;
+	font: Verdana, Geneva, sans-serif;
+	font-variant:small-caps;
+	line-height: 1.3em;
+}
+
+.mainBox2 {
+	border: 0px solid #fff;
+	width: 200px;
+	height: 280px;
+	padding-top:12px;
+	margin-left: 10px;
+	text-align: center;
+	float: left;
+}
+
+
+/* Tips for sidebars:
+1. Since we are working in percentages, it's best not to use side padding on the sidebars. It will be added to the width for standards compliant browsers creating an unknown actual width. 
+2. Space between the side of the div and the elements within it can be created by placing a left and right margin on those elements as seen in the ".thrColLiqHdr #sidebar1 p" rule.
+3. Since Explorer calculates widths after the parent element is rendered, you may occasionally run into unexplained bugs with percentage-based columns. If you need more predictable results, you may choose to change to pixel sized columns.
+*/
+
+.thrColLiqHdr #sidebar1 {
+	float: left; /* this element must precede in the source order any element you would like it be positioned next to */
+	width: 22%; /* since this element is floated, a width must be given */
+	padding: 15px 0; /* top and bottom padding create visual space within this div  */
+	margin-left: 20px;
+	margin-bottom: 35px;
+}
+.thrColLiqHdr #sidebar2 {
+	float: left; /* this element must precede in the source order any element you would like it be positioned next to */
+	width: 22%; /* since this element is floated, a width must be given */
+	padding: 15px 0; /* top and bottom padding create visual space within this div */
+	margin-left: 20px;
+	margin-bottom: 35px;
+}
+.thrColLiqHdr #sidebar1 p, .thrColLiqHdr #sidebar1 h3, .thrColLiqHdr #sidebar2 p, .thrColLiqHdr #sidebar2 h3 {
+	margin-left: 10px; /* the left and right margin should be given to every element that will be placed in the side columns */
+	margin-right: 10px;
+}
+
+
+.thrColLiqHdr #lowercontent4 a:hover, #lowercontent3 a:hover, #lowercontent2 a:hover, #lowercontent1 a:hover, #lowercontent5 a:hover {
+	color:#06F;
+}
+
+.thrColLiqHdr #lowercontent2 {
+	float: right;
+	width: 28%;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	padding: 7px;
+	text-align: left;
+	border-top-style: double;
+	border-color:#CCC;
+	height: 450px;
+	
+/* the right and left margins on this div element creates the two outer columns on the sides of the page. No matter how much content the sidebar divs contain, the column space will remain. You can remove this margin if you want the #mainContent div's text to fill the sidebar spaces when the content in each sidebar ends. */
+}
+.thrColLiqHdr #lowercontent3 {
+	float: right;
+	width: 35%;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	padding: 7px;
+	text-align: left;
+	border-color:#CCC;
+	height: 450px;
+/* the right and left margins on this div element creates the two outer columns on the sides of the page. No matter how much content the sidebar divs contain, the column space will remain. You can remove this margin if you want the #mainContent div's text to fill the sidebar spaces when the content in each sidebar ends. */
+}
+
+.thrColLiqHdr #lowercontent3 ul, #lowercontent4 ul {
+	padding-left: 1.2em;
+	line-height: 1.2em;
+}
+
+.thrColLiqHdr #lowercontent3 li, #lowercontent4 li {
+	margin-top: 1.2em;
+}
+
+.thrColLiqHdr #lowercontent4 {
+	float: right;
+	width: 55%;
+	margin-left: 20px;
+	margin-right: 15px;
+	margin-bottom: 10px;
+	padding: 7px;
+	text-align: left;
+	border-color:#CCC;
+	height: 100%;
+	/* the right and left margins on this div element creates the two outer columns on the sides of the page. No matter how much content the sidebar divs contain, the column space will remain. You can remove this margin if you want the #mainContent div's text to fill the sidebar spaces when the content in each sidebar ends. */
+}
+
+.thrColLiqHdr #lowercontent1 { 
+	float: left;
+	width: 95%;
+	margin-left: 15px;
+	margin-bottom: 10px;
+	padding: 7px;
+	border-top-style: double;
+	border-color:#CCC;
+	height: 450px;
+/* the right and left margins on this div element creates the two outer columns on the sides of the page. No matter how much content the sidebar divs contain, the column space will remain. You can remove this margin if you want the #mainContent div's text to fill the sidebar spaces when the content in each sidebar ends. */
+}
+.thrColLiqHdr #lowercontent5 { 
+	float: left;
+	width: 25%;
+	margin-left: 40px;
+	margin-bottom: 10px;
+	padding: 7px;
+	border-top-style: double;
+	border-color:#CCC;
+	height: 450px;
+/* the right and left margins on this div element creates the two outer columns on the sides of the page. No matter how much content the sidebar divs contain, the column space will remain. You can remove this margin if you want the #mainContent div's text to fill the sidebar spaces when the content in each sidebar ends. */
+}
+.thrColLiqHdr #lowercontent4 ul {
+		line-height: 1.6em;
+}
+
+.thrColLiqHdr #lowercontent1 h6 {
+	font-size:14px;
+	font-variant:small-caps;
+	text-align: center;
+	color: #036;
+	
+}
+.thrColLiqHdr #lowercontent2 h5 {
+	font-size:14px;
+	font-variant:small-caps;
+	text-align:center;
+	color: #036;
+}
+.thrColLiqHdr #lowercontent3 h4 {
+	font-size:14px;
+	font-variant:small-caps;
+	text-align:center;
+	color: #036;
+	line-height: 18pt;
+}
+.thrColLiqHdr #lowercontent4 h3 {
+	font-size:14px;
+	font-variant:small-caps;
+	text-align:center;
+	color: #036;
+}
+.thrColLiqHdr #footer {
+	padding: 0 10px; /* this padding matches the left alignment of the elements in the divs that appear above it. */
+	background-color: #036;
+	color: #FFF;
+} 
+#footer a:link {
+	text-align:center;
+	color:#FFF;
+	font-size:90%;
+	padding:10px;
+}
+
+#footer a:visited {
+	text-align:center;
+	color:#999;
+	font-size:90%;
+	padding:10px;
+}
+.thrColLiqHdr #footer p {
+	margin: 0; /* zeroing the margins of the first element in the footer will avoid the possibility of margin collapse - a space between divs */
+	padding: 10px 0; /* padding on this element will create space, just as the the margin would have, without the margin collapse issue */
+	text-align: center;
+}
+
+
+/* Miscellaneous classes for reuse */
+.fltrt { /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* this class can be used to float an element left in your page The floated element must precede the element it should be next to on the page. */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* this class should be placed on a div or break element and should be the final element before the close of a container that should fully contain its child floats */
+	clear:both;
+    height:0;
+    font-size: 1px;
+    line-height: 0px;
+}
+
+.FunLink {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+	font-style: oblique;
+	font-weight: bolder;
+	color: #036;
+}
+
+.CallAction {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 120%;
+	font-style: oblique;
+	font-weight: bold;
+	color: #036;
+}
+
+.ht2paragraph {
+	text-align: left;
+	color: #036;
+	line-spacing: 2em;
+}	
+.Emphasis  {
+	font-size: 14px;
+	font-weight: bold;
+	text-transform: capitalize;
+	color: #036;
+	text-align: center;
+}
+
+.smallEmphasis {
+	font-style: oblique;
+	color: #036;
+	text-align:center;
+	font-size:90%;
+}
+.headline {
+	color: #FF9;
+	font-size:150%;
+	font-weight:bold;
+	text-shadow: 0 1px 0 #000;
+	text-align:center;
+}
+
+
+#apDiv2 {
+	padding: 10px;
+	position: static;
+	margin-right:690px;
+	text-align:center;
+	width:310px;
+	height:150px;
+	z-index:2;
+	left: 150px;
+	top: 57px;
+}
+ 
+.box {  
+	border: 2px solid #036;
+	padding:5px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius:10px;  
+}  
+
+.box ul {
+	text-align:left;
+}
+
+.box img {
+	margin: 5px;
+}
+
+.boxOrder {  
+	border: 3px;
+	border-style: outset;
+	color: #036;
+	padding-left:20px;
+	padding-top:5px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius:10px;  
+}  
+
+.boxOrder ul {
+	text-align:left;
+}
+
+.boxOrder img {
+	margin: 5px;
+}
+.navFoot li {
+	display: inline;
+	list-style-type: none;
+	padding-right: 20px;
+	text-align:center;
+	color:#fff;
+}
+
+.navFoot li a {
+	color: #FFF;
+	font-size: 110%;
+	text-decoration: none;
+
+}
+
+.navFoot li a:hover {
+	color: #F90;
+	text-decoration:underline;
+	font-size: 110%;
+	text-decoration: none;
+
+}
+img {
+	padding:10px;
+	font-size: 70%;
+}
+
+/*From original file navbar.css  */
+
+ul#navbar {
+	float: inherit;
+	list-style: none;
+	height: 30px;
+	background-color:#036;
+	text-align:left;
+	padding-top:10px;
+}
+ul#navbar li {
+	display:inline;
+	list-style-type: none;
+	padding-right:30px;
+	padding-left:30px;
+	color: #FFF;
+	font-size: 110%;
+	border-right-width:thin;
+	border-right-style: groove;
+	border-color:#CCC;
+}
+ul#navbar li a {
+	color: #FFF;
+	font-size: 90%;
+	text-decoration: none;
+}
+ul#navbar li a:hover {
+	color: #69F;
+	font-size: 90%;
+	text-decoration:underline;
+}
+ul#navbar li a.current {
+	color: #CCC;
+	font-size: 90%;
+}
+#OrderButton {
+	display: block;
+	width: 120px;
+	height: 28px;
+	background: url(../images/OrderButton.gif) no-repeat 0 0;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+#OrderButton:hover {
+	background-position: 0 -28px;
+	text-align: center;
+}
+#OrderButton span {
+	display: none;
+}
+
+/* From navigation.css  */
+
+#navlist {
+	background:url(../images/TopBarPlain.gif);
+	background-repeat:no-repeat;
+	height: 45px;
+	text-align: right;
+}
+#navlist li {
+	display: inline;
+	list-style-type: none;
+	padding-right: 20px;
+	color: #FFF;
+	font-size: 90%;
+}
+#navlist li a {
+	color: #FFF;
+	text-decoration: none;
+}
+#navlist li a:hover {
+	text-decoration:underline;
+}
+/* End of ordered list for top navigation links */
+#navlistTemp li {
+	display: inline;
+	text-align: right;
+	list-style-type: none;
+	padding-right: 20px;
+	color: #FFF;
+	font-size: 80%;
+}
+#navlistTemp li a {
+	color: #FFF;
+	text-decoration: none;
+}
+#navlistTemp li a:hover {
+	text-decoration:underline;
+}
+/*** Nav bar styles ***/
+
+ul.nav, .nav ul {
+	/*Remove all spacings from the list items*/
+	margin: 0;
+	padding: 0;
+	cursor: default;
+	list-style-type: none;
+}
+ul.nav {
+	width:140px;
+	/*Optional, to make the navigation bar positions on the left of the content*/
+	float: left;
+	margin-right: 1em;
+}
+ul.nav>li {
+	margin: 0;
+	padding: 0px 2px 9px 6px;
+}
+ul.nav li>ul {
+	/*Make the sub list items invisible*/
+	display: none;
+	position: relative;
+	width: 150px;
+	margin-top: -1.2em;
+	margin-left:130px;
+	border:groove;
+}
+ul.nav li:hover>ul {
+	/*When hovered, make them appear*/
+	display:block;
+}
+.nav ul li a {
+	/*Make the hyperlinks as a block element, sort of a hover effect*/
+	display: block;
+	padding: 2px 10px;
+}
+/*** Menu styles (customizable) ***/
+
+ul.nav, .nav ul, .nav ul li a {
+	background-color: #fff;
+	color: #036;
+	font-style:italic;
+}
+ul.nav li:hover, .nav ul li a:hover {
+	background-color: #369;
+	color: #fff;
+}
+ul.nav li:active, .nav ul li a:active {
+	background-color: #036;
+	color: #fff;
+}
+.nav a {
+	text-decoration: none;
+}

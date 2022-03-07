@@ -1,0 +1,37 @@
+{% extends "topics/base.html" %}
+{% load static %}
+
+{% block back-style %}
+<section class= "section is-medium mt-6" style="background-image: linear-gradient(to right,rgba(7,20,37,.98) 0,rgba(7,20,37,.05) 100%), url('https://images.pexels.com/photos/5965632/pexels-photo-5965632.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'); background-repeat: no-repeat; background-size: cover;">
+  {% endblock back-style %} 
+
+  {% block content %}
+  <section class="section">
+    <div class="container">
+      <div class="columns is-multiline">
+        <div class="column is-8">
+          <div class="boxbox has-background-white-ter p-6"> 
+            <div class="conStyle has-text-grey mb-5">
+                {{ content|safe }}
+            </div>
+  
+          </div>
+        </div> 
+        {% endblock content %}
+
+
+  {% block related %}
+  <section class="section">
+    <div class="container"> 
+      <div class="columns"> 
+        <div class="column boxbox is-8"> 
+          <h3 class="mb-5 is-size-3 is-size-3-mobile has-text-weight-bold has-text-centered">Related Research Paper Topics</h3>
+          <div class="optimShadBox conStyle has-text-grey-dark has-background-primary-light">
+            {{ related|safe }}
+            </div>
+ 
+        </div>
+      </div> 
+    </div>  
+  </section> 
+{% endblock related %} 

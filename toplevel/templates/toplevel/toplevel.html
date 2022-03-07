@@ -1,0 +1,11 @@
+<h2>Welcom to the top level!</h2>
+
+{% for service in toplevel_objects %}
+
+
+<h2>{{ service.title }}</h2>
+
+
+<p>{{ service.content | safe }} </p>
+
+{% endfor %}

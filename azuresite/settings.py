@@ -32,13 +32,19 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'polls.apps.PollsConfig',
+    'topics.apps.TopicsConfig',
+    'django_extensions',
+    'toplevel.apps.ToplevelConfig',
+    'resources.apps.ResourcesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions.db.fields',
+    'dynamic_breadcrumbs',
+    'treebeard',
 ]
 
 MIDDLEWARE = [
@@ -64,6 +70,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'dynamic_breadcrumbs.context_processors.breadcrumbs',
             ],
         },
     },
@@ -77,8 +84,12 @@ WSGI_APPLICATION = 'azuresite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'papermasters',
+        'USER': 'karen',
+        'PASSWORD': 'Efromm1967',
+        'HOST': 'pmserver.postgres.database.azure.com',
+        'PORT': '5432',
     }
 }
 
@@ -121,3 +132,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]

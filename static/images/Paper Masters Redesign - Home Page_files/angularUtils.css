@@ -1,0 +1,82 @@
+/**
+Styles for things you'll find in angularUtils.js
+*/
+
+/* for grabbing templates out of the DOM */
+.qb-angular-template {
+    display: none !important;
+}
+
+/* for horizontally-auto-sizing text boxes */
+.qb-autosize-input,
+.qb-autosize-input-ruler {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.qb-autosize-input-ruler {
+	display: inline-block;
+	max-height: 1em;
+	word-break: break-all;
+	overflow: hidden;
+	visibility: hidden;
+	position: absolute;
+	max-width: 100%;
+	top: 0;
+	left: 0;
+}
+
+.errorDialogWindow .modal-dialog,
+.infoDialogWindow .modal-dialog {
+    margin: 50px auto;
+    width: 400px;
+}
+.errorDialogWindow .modal-dialog .modal-content,
+.infoDialogWindow .modal-dialog .modal-content
+{
+    -webkit-box-shadow:none;
+    box-shadow: none;
+}
+.errorDialogWindow .modal-dialog .errorDialog,
+.infoDialogWindow .modal-dialog .infoDialog {
+    padding:20px;
+}
+.errorDialogWindow .modal-dialog .errorDialogContents,
+.infoDialogWindow .modal-dialog .infoDialogContents{
+	padding: 0px;
+}
+.errorDialogWindow .modal-dialog .errorDialogText,
+.infoDialogWindow .modal-dialog .infoDialogText{
+    font-size:18px;
+    padding-top:3px;
+    overflow:auto;
+}
+.errorDialogWindow .modal-dialog .errorDialogText h3,
+.infoDialogWindow .modal-dialog .infoDialogText h3{
+	margin-top: 0;
+	margin-bottom: 36px;
+}
+
+.errorDialogWindow .modal-dialog .errorDialogIcon {
+    width:61px;
+    height:50px;
+    background: url(themes/classic/images/icons/ccwarning.png);
+    float:left;
+    display:inline-block;
+    background-repeat: no-repeat;
+}
+.modal-dialog .infoDialogIcon {
+    background: url(themes/classic/images/icons/Plugs_Complete.png);
+    background-repeat: no-repeat;
+    display:inline-block;
+    width:75px;
+    height:64px;
+    background-position: 0 -128px;
+    float:left;
+}
+
+.errorDialogWindow .modal-dialog .footerButtons,
+.infoDialogWindow .modal-dialog .footerButtons {
+    border-top:1px solid #ccc;
+    overflow: hidden;
+}

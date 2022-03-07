@@ -1,0 +1,20 @@
+{% extends "topics/base.html" %}
+{% load static %}
+
+{% block back-style %}
+<section class="section is-medium mt-6" style="background-image: linear-gradient(to right,rgba(7,20,37,.98) 0,rgba(7,20,37,.1) 100%), url('https://images.pexels.com/photos/5553045/pexels-photo-5553045.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260'); background-repeat: no-repeat; background-size: cover;">
+{% endblock back-style %} 
+
+{% block content %}
+  <section class="section">
+    <div class="container">
+      <div class="columns is-multiline">
+        <div class="column is-8">
+          <div class="boxbox has-background-white-ter p-6"> 
+            <div class="conStyle has-text-grey mb-5">
+                {{ content|safe }}
+            </div>
+  
+          </div>
+        </div> 
+        {% endblock content %}

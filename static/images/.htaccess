@@ -1,0 +1,31 @@
+<IfModule mod_headers.c>
+Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+</IfModule>
+
+Options -Indexes
+
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+Redirect /order/     https://www.papermasters.com/order.html
+Redirect /american-government-questions.html    https://www.papermasters.com/government.html
+Redirect /american-term-paper-company.html     https://www.papermasters.com/american-research-paper-company.html
+Redirect /cheaper-term-papers.html     https://www.papermasters.com/cheaper-research-papers.html
+Redirect /term-paper-services-checklist.html     https://www.papermasters.com/research-paper-checklist.html
+Redirect /term-paper-testimonials.html     https://www.papermasters.com/research-paper-testimonials.html
+Redirect /term-paper-prices.html     https://www.papermasters.com/research-paper-prices.html
+Redirect /term-paper-topics.html     https://www.papermasters.com/research-paper-topics.html
+Redirect /pharmaceutical_company.html     https://www.papermasters.com/pharmaceutical_papers.html
+Redirect /herbal-medicine.html	https://www.papermasters.com/alternative-medicine.html
+Redirect /bullying_term_paper.html     https://www.papermasters.com/bullying-research.html
+Redirect /beat_generation.html     https://www.papermasters.com/beat-generation.html
+Redirect /abott-vascular.html     https://www.papermasters.com/abbott-vascular.html
+Redirect /kissinger.html     https://www.papermasters.com/henry-kissinger.html
+Redirect /plato-allegory-cave-research-paper.html     https://www.papermasters.com/allegory-of-the-cave.html
+Redirect /industry-competitors.html     https://www.papermasters.com/company-profile.html
+Redirect /conflict-management.html     https://www.papermasters.com/management.html
+Redirect /bank-compliance-in-the-xxi-century.html     https://www.papermasters.com/banking-research.html 
+Redirect /learning-style-inventory-elementary.html     https://www.papermasters.com/elementary-education-research.html
+Redirect /freelance-writers-needed.html     https://www.papermasters.com/freelance-writer-position.html
+Redirect /freelance-opportunities.html     https://www.papermasters.com/freelance-writer-position.html

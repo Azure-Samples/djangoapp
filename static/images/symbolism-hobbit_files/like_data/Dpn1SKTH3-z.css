@@ -1,0 +1,20 @@
+/*1354335861,173220391*/
+
+body{overflow-y:scroll}
+.mini_iframe, .serverfbml_iframe{overflow-y:visible}
+.auto_resize_iframe{height:auto;overflow:hidden}
+.pipe{color:gray;padding:0 3px}
+#content{width:auto;padding:0;margin:0}
+.profile #content, .home #content, .search #content{min-height:600px}
+.UIStandardFrame_Container{width:960px;padding-top:20px;margin:0 auto}
+.UIStandardFrame_Content{width:760px;float:left;margin:0;padding:0}
+.UIStandardFrame_SidebarAds{width:200px;padding:0;margin:0;float:right}
+.UIFullPage_Container{width:940px;padding:20px 12px 0;margin:0 auto}
+.empty_message{font-size:13px;line-height:17px;padding:20px 20px 50px 20px;text-align:center;background:#f7f7f7}
+.see_all{text-align:right}
+.standard_status_element{visibility:hidden}
+.standard_status_element.async_saving{visibility:visible}
+img.tracking_pixel{height:1px;position:absolute;visibility:hidden;width:1px}
+table{word-wrap:normal}
+
+#bootloader_DM7v6 { height: 42px; }
