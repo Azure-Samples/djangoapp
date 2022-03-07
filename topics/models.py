@@ -1,27 +1,17 @@
 from django.db import models
-from mptt.models import MPTTModel
-from mptt.fields import TreeForeignKey
+from treebeard.mp_tree import MP_Node
 from django.utils.text import slugify
 from django.urls import reverse
 from datetime import datetime
-from mptt.fields import TreeManyToManyField
 
 
-class Category(MPTTModel):
-    parent = TreeForeignKey(
-        "self", on_delete=models.CASCADE, 
-        blank=True, null=True, related_name="children"
-    )
-    title = models.CharField(max_length=50, unique=True)
+class Category(MP_Node):
+    name = models.CharField(max_length=30)
 
-    class Meta:
-        ordering = ["tree_id", "lft"]
-
-    class MPTTMeta:
-        order_insertion_by = ["title"]
+    node_order_by = ['name']
 
     def __str__(self):
-        return self.title
+        return 'Category: {}'.format(self.name)
 
 
 class topic(models.Model):
@@ -36,7 +26,6 @@ class topic(models.Model):
     new_url = models.CharField(max_length=255, blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
-    categories = TreeManyToManyField("Category")
 
     def __str__(self):
         return self.topic_text
