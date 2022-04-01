@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{{ meta_title}}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="{{ meta_description }}">
+    <meta name="author" content="">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bulma.min.css' %}">
+    <link rel="icon" href="{% static 'favicon.ico' %}">
+    <script src="{% static 'js/main.js' %}"></script>
+  </head>
+  <body> 
+        
+    <section class="hero price-cover is-small">
+      <div class="is-relative">
+        <nav class="navbar px-3 py-4" style="background-color: transparent;">
+          <div class="navbar-brand">
+            <a class="navbar-item is-hidden-touch" href="#">
+              <img class="image is-fullheight" src="images/modeltermpaper-logo.svg" alt="ModelTermPapers Logo" width="180px" height="200px">
+            </a>
+            <a class="navbar-item is-hidden-desktop" href="#">
+              <img class="image" src="images/modeltermpaper-logo.svg" alt="ModelTermPapers Logo" width="180px" height="200px">
+            </a>
+            <a class="navbar-burger" role="button" aria-label="menu" aria-expanded="false">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
+          <div class="navbar-menu">
+            <div class="navbar-end"><a class="navbar-item" href="#">About</a><a class="navbar-item" href="#">Services</a><a class="navbar-item" href="#">Guarantees</a><a class="navbar-item" href="#">Term Papers</a><a class="navbar-item" href="#">Prices</a></div>
+            <div class="navbar-item"><a class="button is-danger" href="#">Order</a></div>
+          </div>
+        </div>
+        </nav> 
+        <div class="hero-body">
+        <div class="container mb-6"> 
+            <div class="columns is-centered">
+              <div class="column glass-box2 is-6 has-text-centered"> 
+              <div class="header-text px-2">
+                <h2 class="has-text-white p-4 is-size-3-desktop is-size-4-mobile is-size-3-tablet has-text-weight-bold">Need Custom Term Paper Writing Services?</h2>
+                <p class="has-text-grey-lighter">Take the stress out of your project! Allow our writers to provide a custom term paper for you today!</p>
+                <div class="buttons is-centered p-5"><a class="button is-info" href="#">Order Paper Now!</a></div> 
+              </div>
+              </div> 
+              </div> 
+          </div> 
+          </div>    
+  </div>
+  </div>
+    </div>
+ 
+        
+    <section class="section has-background-dark">
+      <div class="container">
+        <div class="columns is-multiline">
+          <div class="column is-8">
+            <div class="box has-background-light p-6">
+              <h2 class="mb-5 is-size-3 is-size-3-mobile has-text-weight-bold has-text-centered has-text-dark">{{ title }}</h2>
+              {% block content %}
+               
+                {% endblock content %} 
+            </div> 
+            </div>
+
+            <div class="column is-one-third"> 
+              <div class="box has-background-light p-3">
+                <h2 class="is-size-3-desktop is-size-4-mobile is-size-5-tablet has-text-weight-bold has-text-dark has-text-centered">ModelTermPapers</h2>
+                <div class="has-text-dark p-4 mb-5">
+                  <p class="mb-5">Custom Writing Services for Freshman and Sophomore Level College Students</p>
+      
+                  <h3 class="is-size-5-desktop has-text-weight-bold has-text-primary is-size-6-tablet mb-5">We Stand Behind Our Projects!</h3>
+                   <div class="px-5 mb-4 mt-2">
+                    <li>Plagiarism Free!</li>
+                    <li>Will Pass TurnItin.com!</li>
+                    <li>Your project is never resold!</li>
+                    <li>Never added to a database!</li>
+                    <li>Custom written just for you!</li>
+                    <li>Delivered on time!</li>
+                    <li>Call us today to learn more!</li>
+                  </div> 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+        
+       
+      <footer class="section has-background-danger">
+        <div class="container pb-5 has-text-centered">
+          <a class="mx-auto mb-4 is-inline-block" href="#">
+            <img class="image" src="images/modeltermpaper-logo.svg" alt="ModelTermPapers.com" width="250px" height="250px">
+          </a>
+        </div>
+        <div class="pt-5" style="border-top: 1px solid #fcf7fc;"></div>
+        <div class="container">
+          <p class="has-text-centered has-text-white">All Rights Reserved © ModelTermPapers.com - E World Publishing</p>
+        </div>
+      </footer>
+  </body>
+</html>
