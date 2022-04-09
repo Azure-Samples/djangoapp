@@ -86,10 +86,10 @@ WSGI_APPLICATION = 'azuresite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ['pm_local'],
-        'USER': os.environ['postgres'],
-        'PASSWORD': os.environ['Efromm1967'],
-        'HOST': os.environ['localhost'],
+        'NAME':'pm_local',
+        'USER': 'postgres',
+        'PASSWORD':'Efromm1967',
+        'HOST':'localhost',
     }
 }
 
