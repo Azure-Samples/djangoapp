@@ -26,7 +26,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.environ['pmdb'],
-        'HOST': os.environ['pmserver.postgres.database.azure.com'],
+        'HOST': os.environ['pmserver'],
         'USER': os.environ['karen'],
         'PASSWORD': os.environ['Efromm1967'],
         'OPTIONS': { 'sslmode': 'require'}
