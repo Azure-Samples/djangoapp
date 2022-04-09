@@ -69,6 +69,3 @@ def load_subtopics(request):
     subtopics = Subtopic.objects.filter(subject_id=subject_id).order_by('name')
     return render(request, 'subtopic_dropdown_list_options.html', {'subtopics': subtopics})
 
-class SearchResultsView(ListView):
-    model = Topic
-    template_name = 'search_results.html'

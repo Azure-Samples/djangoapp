@@ -11,5 +11,4 @@ urlpatterns = [
     path('<slug:slug>', views.subject_view, name= 'subject_view'),
     path('<str:subject>/<slug:slug>', views.subtopic_view, name= 'subtopic_view'),
     path('<str:subject>/<str:subtopic>/<slug:slug>', views.index, name= 'index'),
-    path("search/", SearchResultsView.as_view(), name="search_results"),
 ]

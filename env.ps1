@@ -1,4 +1,4 @@
 $Env:DBHOST = "localhost"
-$Env:DBUSER = "manager"
-$Env:DBNAME = "pollsdb"
-$Env:DBPASS = "supersecretpass"
+$Env:DBUSER = "postgres"
+$Env:DBNAME = "postgres"
+$Env:DBPASS = "Efromm1967"

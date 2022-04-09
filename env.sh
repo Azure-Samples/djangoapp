@@ -1,5 +1,5 @@
 export DBHOST="localhost"
-export DBUSER="manager"
-export DBNAME="pollsdb"
-export DBPASS="supersecretpass"
+export DBUSER="postgres"
+export DBNAME="postgres"
+export DBPASS="Efromm1967"
 
