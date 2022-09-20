@@ -6,10 +6,7 @@ author: cephalin
 
 # Django and PostgreSQL sample for Azure App Service
 
-This samples is a simple Django app that connects to a PostgreSQL database. The sample is used with the following tutorials:
-
-- [Deploy a Django web app with PostgreSQL in Azure App Service (Azure CLI)](https://docs.microsoft.com/azure/app-service/containers/tutorial-python-postgresql-app).
-- [Deploy a Django web app with PostgreSQL using the Azure portal](https://docs.microsoft.com/en-us/azure/developer/python/tutorial-python-postgresql-app-portal).
+This samples is a simple Django app that connects to a PostgreSQL database. The sample is used in the tutorial https://learn.microsoft.com/azure/postgresql/flexible-server/tutorial-django-app-service-postgres](Deploy Django app with App Service and Azure Database for PostgreSQL - Flexible Server).
 
 When deployed to Azure App Service, the database connection information is specified via environment variables `DBHOST`, `DBPASS`, `DBUSER`, and `DBNAME`. This app always uses the default PostgreSQL port. See the tutorials for more information.
 
