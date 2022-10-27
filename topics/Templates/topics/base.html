@@ -1,0 +1,172 @@
+{% load static %} 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ meta_title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="{{ meta_description }}">
+    <link href="{% static 'css/main.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/bulma.min.css' %}" rel="stylesheet" type="text/css">
+    {% block meta-add %}{% endblock meta-add %} 
+    <link rel="icon" href="{% static 'favicon.icon' %}">
+    <script src="{% static 'js/main.js' %}"></script>
+    {% block js-add %}{% endblock js-add %}  
+    <meta name="google-site-verification" content="68SFwjLkdmv-QYy5XT-zDZkncLLKRRkMqoyCSnaRa50" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2687646-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2687646-1');
+</script>
+  </head>
+  <body> 
+
+<header>
+    <nav class="navbar is-fixed-top py-4 pr-6 pl-6">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="#">
+            <img src= "{% static 'images/bulma-plain-assets/logos/logo-papermasters.svg' %}" alt="" width="96px">
+          </a>
+          <a class="navbar-burger" role="button" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span> 
+            <span aria-hidden="true"></span> 
+          </a>
+        </div>
+        <div class="navbar-menu">
+          <div class="navbar-end"><a class="navbar-item" href="#">Home</a><a class="navbar-item" href="#">Services</a><a class="navbar-item" href="#">Prices</a><a class="navbar-item" href="#">Subjects</a></div>
+          <div class="navbar-item"><a class="button is-danger has-text-weight-bold mr-1 is-outlined has-text-warning" href="#">Order</a></div>
+          <div class="field has-addons">
+            <div class="control mt-2 pl-2">
+              <input class="input" type="search" placeholder="Search" aria-label="Search">
+            </div>
+            <div class="control mt-2 pr-2">
+              <button class="button" type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor" style="width: 24px;height: 24px">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+              </button>
+            </div>
+          </div> 
+        </div>
+      </nav>
+
+      {% block back-style %}
+<section class= "section is-medium mt-6" style="background-image: linear-gradient(to right,rgba(7,20,37,.98) 0,rgba(7,20,37,.05) 100%), url('https://images.pexels.com/photos/5965632/pexels-photo-5965632.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'); background-repeat: no-repeat; background-size: cover;">
+  {% endblock back-style %} 
+  <div class="container">
+    <div class="columns is-multiline">
+      <div class="column is-5-desktop is-7-tablet my-2">
+        <div class="glassDark px-4 py-3"> 
+          <h4 class="mt-3 mb-3 p-4 is-size-4 has-text-dark has-text-weight-bold has-text-centered">Need Help Writing a Paper?</h4>
+          <p class="has-text-black-bis mb-5 has-text-centered">Have Paper Masters custom write your project today!</p>
+          <div class="has-text-grey-lighter mb-1 ml-6 mb-4">
+            <li>24/7 Customer Support</li>
+            <li>Free Plagiarism Check</li>
+            <li>Writing at Your Level</li>
+            <li>Writers All Have Advanced Degrees</li>
+            <li>Will Follow Specific Instructions</li>  
+          </div>
+          <p class="has-text-black-bis mb-5 has-text-centered">Have Paper Masters custom write your project today!</p>
+          <div class="buttons is-centered mb-4 p-3"><a class="button is-warning is-focused is-medium has-text-black" href="#">Yes! Write My Paper!</a></div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+
+</header>
+
+
+
+{% if breadcrumbs %}
+<nav class="breadcrumb breadbar px-5 py-4" aria-label="breadcrumbs">
+    {% include "dynamic_breadcrumbs/breadcrumbs.html" with breadcrumbs=breadcrumbs%}
+</nav>
+{% endif %}
+
+  
+
+ 
+            {% block content %}
+            
+            {% endblock content %}
+
+            <div class="column is-one-third"> 
+                <div class="doubleBorder p-3">
+                  <h2 class="is-size-2-desktop is-size-3-mobile is-size-4-tablet has-text-weight-bold has-text-grey has-text-centered">Paper Masters</h2>
+                  <div class="has-text-light p-4 mb-5">
+                    <li>Custom Written Papers</li>
+                    <li>100% Plagiarism Free</li>
+                    <li>24/7 Customer Service</li>
+                    <li>Guaranteed Confidentiality</li>
+                    <li>Text us for a Quote Today!</li>
+                    <ul><li>1-570-301-7456</li> </ul>
+        
+                    <h3 class="is-size-5 has-text-weight-bold has-text-warning has-text-centered p-4">Choosing a Research Paper Topic</h3>
+                    <p>Can't decide on a topic? Need ideas or inspiration for research in your field of study? Paper Masters provides topic suggestions to make your decision easier.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> 
+        </section>
+         
+
+        {% block related %}
+        {% endblock related %} 
+
+        {% block tabs %}
+        {% endblock tabs %}
+
+        {% block topiclist %}
+        {% endblock topiclist %}
+
+
+
+{% block footer %}
+<footer class="section">
+    <div class="container pb-5 has-text-centered">
+      <a class="mx-auto mb-4 is-inline-block" href="#">
+        <img class="image" src="{% static 'images/bulma-plain-assets/logos/logo-papermasters.svg' %}" alt="Paper Masters Logo" width="96px">
+      </a>
+      <div class="column is-4 is-offset-4 has-text-light has-text-centered mb-4">
+        <p>Paper Masters</p>
+        <p>Main address: Hunlock Creek, PA 18621</p>
+        <p>Tel:(570) 955-1438</p>
+        <p>eworld@papermasters.com</p>
+      </div>
+      <div>
+        <a class="mr-4 is-inline-block" href="#">
+          <img src="{% static 'images/bulma-plain-assets/socials/facebook.svg' %}">
+        </a>
+        <a class="mr-4 is-inline-block" href="#">
+          <img src="{% static 'images/bulma-plain-assets/socials/twitter.svg' %}">
+        </a> 
+        <a class="mr-4 is-inline-block" href="#">
+          <img src="{% static 'images/bulma-plain-assets/socials/instagram.svg' %}">
+        </a>
+        <a class="is-inline-block" href="#">
+          <img src="{% static 'images/bulma-plain-assets/socials/linkedin.svg' %}">
+        </a>
+      </div>
+    </div>
+    <div class="pt-5" style="border-top: 1px solid #dee2e6;"></div>
+    <div class="container">
+      <div class="column is-full">
+        <p class="has-text-centered has-text-grey">Paper Masters is a custom research paper writing service. Operating for over 20 years, Paper Masters has established itself as the premier custom research paper company on the Internet. Paper Masters is a division of E World Publishing.</p>
+      </div>
+      <div class="pt-5 has-text-centered">
+        <p>Paper Masters - E World Publishing © 2022</p>
+      </div>
+    </div>
+  </footer>
+  {% endblock footer %}
+
+</body>
+</html> 

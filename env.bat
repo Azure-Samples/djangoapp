@@ -1,4 +1,4 @@
 set DBHOST=localhost
-set DBUSER=manager
-set DBNAME=pollsdb
-set DBPASS=supersecretpass
+set DBUSER=postgres
+set DBNAME=pm_local
+set DBPASS=Efromm1967
